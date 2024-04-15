@@ -9,7 +9,7 @@ return {
       local builtin = require('telescope.builtin')
 
       -- Always search files
-      vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
+      vim.keymap.set('n', '<Cs-p>', builtin.find_files, {})
 
       -- Search git with files as fallback
       vim.keymap.set('n', '<C-p>', function()
@@ -19,15 +19,15 @@ return {
         end
       end, {})
 
-      vim.keymap.set('n', '<leader>pws', function()
+      vim.keymap.set('n', '<leader>gws', function()
         local word = vim.fn.expand("<cword>")
         builtin.grep_string({ search = word })
       end)
-      vim.keymap.set('n', '<leader>pWs', function()
+      vim.keymap.set('n', '<leader>gWs', function()
         local word = vim.fn.expand("<cWORD>")
         builtin.grep_string({ search = word })
       end)
-      vim.keymap.set('n', '<leader>ps', function()
+      vim.keymap.set('n', '<leader>gs', function()
         builtin.grep_string({ search = vim.fn.input("Grep > ") })
       end)
       vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})

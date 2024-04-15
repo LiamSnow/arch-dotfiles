@@ -8,7 +8,7 @@ return {
         ensure_installed = {
           "c", "lua", "vim", "go", "rust", "javascript",
           "html", "css", "python", "bash", "markdown",
-          "markdown_inline"
+          "markdown_inline", "verilog", "java", "comment"
         },
         sync_install = false,
         auto_insall = true,
