@@ -65,6 +65,9 @@ return {
             top = "",
           }
         }
+      },
+      chat = {
+        welcome_message = "Project Flux%"
       }
     },
     dependencies = {

@@ -44,7 +44,7 @@ client.urgent            $peach    $base $peach $overlay0  $peach
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
 
-for_window [class="^.*"] border none 
+for_window [class="^.*"] border none
 gaps inner 12
 gaps outer 0
 
@@ -70,10 +70,10 @@ exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
 exec_always --no-startup-id killall polybar; polybar -c ~/.config/polybar/config.ini liamsbar &
 
 # wallpaper
-exec --no-startup-id feh --bg-scale ~/.config/wallpapers/macos_mojave.jpg 
+exec --no-startup-id feh --bg-scale ~/.config/wallpapers/macos_mojave.jpg
 
 # base view
-exec --no-startup-id kitty -e sh -c 'neofetch; bash'
+exec --no-startup-id kitty -e zsh -c 'neofetch; zsh'
 
 # Pulse Audio
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -88,7 +88,7 @@ bindsym XF86AudioPrev exec playerctl previous
 #bindsym XF86AudioPrev exec playerctl previous
 
 # Brightness Control
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-val=0 -q set 3%-
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-val=0 -q set 1%-
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 3%+
 
 # use Mouse+$mod to drag floating windows to their wanted position
