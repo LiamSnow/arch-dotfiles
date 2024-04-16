@@ -1,3 +1,5 @@
+-- Liam's Markdown to PDF (Latex) Lua Script
+
 isCurrentSectionUnnumbered = false
 
 function Header(el)
@@ -19,9 +21,9 @@ function Header(el)
         end
     elseif el.level == 4 then
         -- H4
-        if hasAsterick or isCurrentSectionUnnumbered then 
+        if hasAsterick or isCurrentSectionUnnumbered then
             -- Unnumbered Subsections
-            if hasAsterick then 
+            if hasAsterick then
                 el.content[1].text = el.content[1].text:sub(2) -- Remove asterisk
             end
             return pandoc.RawBlock('latex',

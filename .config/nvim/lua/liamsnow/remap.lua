@@ -16,14 +16,16 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- Paste Over Without Loosing Clipboard
-vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set("x", "<A-p>", [["_dP]])
 
 -- Delete Without Copy
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
--- Yank to system clipboard (asbjornHaland)
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
+-- System Clipboard (asbjornHaland)
+vim.keymap.set({ "n", "v" }, "<A-y>", [["+y]])
+vim.keymap.set("n", "<A-Y>Y", [["+Y]])
+vim.keymap.set({ "n", "v" }, "<A-p>", [["+p]])
+vim.keymap.set({ "n", "v" }, "<A-P>", [["+P]])
 
 -- Format Selection
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
@@ -39,4 +41,3 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 -- Chmod Bash
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-

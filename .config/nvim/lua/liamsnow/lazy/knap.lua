@@ -4,27 +4,83 @@ return {
     config = function()
       local knap = require("knap")
 
-      -- process once & refresh
-      vim.keymap.set('n', '<leader>po', function() knap.process_once() end)
+      -- start HTML preview
+      vim.keymap.set('n', '<leader>kh', function()
+        knap.toggle_autopreviewing()
+        vim.g.knap_settings.mdoutputext = "html"
+      end)
 
-      -- close viewer
-      vim.keymap.set('n', '<leader>pc', function() knap.close_viewer() end)
+      -- start PDF preview
+      vim.keymap.set('n', '<leader>kp', function()
+        knap.toggle_autopreviewing()
+        vim.g.knap_settings.mdoutputext = "pdf"
+      end)
 
-      -- toggle auto-processing
-      vim.keymap.set('n', '<leader>pa', function() knap.toggle_autopreviewing() end)
+      -- stop
+      vim.keymap.set('n', '<leader>kk', function()
+        knap.close_viewer()
+      end)
 
-      -- SyncTeX forward search
-      vim.keymap.set('n', '<leader>ps', function() knap.forward_jump() end)
+      -- auto stop
+      vim.api.nvim_create_autocmd("VimLeavePre", {
+        callback = knap.close_viewer
+      })
 
-      local pandoc_path = vim.fn.stdpath('config') .. '/pandoc';
+      -- settings
+      local pandoc_path = vim.fn.stdpath('config') .. '/pandoc'
+      local md_to_pdf_path = pandoc_path .. '/liams_md_to_pdf'
+
+      local pandoc_extensions = table.concat({
+        "hard_line_breaks", -- respect new lines
+        "mark", -- highlighting with ==
+        "lists_without_preceding_blankline",
+        "rebase_relative_paths", -- image links
+        "emoji", -- emojis with :smile:
+        "short_subsuperscripts", -- x^2 or O~2
+        "wikilinks_title_after_pipe"
+      }, "+")
+
+      local pandoc_base_cmd = table.concat({
+        "pandoc",
+        "-f markdown+" .. pandoc_extensions,
+        "-s",
+        "-o %outputfile%",
+        "--preserve-tabs=true",
+        "--wrap=preserve"
+      }, " ")
+
+      local pandoc_pdf_cmd = table.concat({
+        pandoc_base_cmd,
+        "-t pdf",
+        '--lua-filter="' .. md_to_pdf_path .. '.lua"',
+        '--template="' .. md_to_pdf_path .. '.tex"',
+        '-V source-dir="' .. pandoc_path .. '"'
+      }, " ")
+
+      local pandoc_html_cmd = table.concat({
+        pandoc_base_cmd,
+        '--mathjax'
+        --'--mathjax="' .. pandoc_path .. '/assets/mathjax.js"',
+      }, " ")
 
       vim.g.knap_settings = {
-        mdoutputext = "pdf",
-        mdtopdf = 'pandoc -f markdown -t pdf -s -o %outputfile% --lua-filter="'..pandoc_path..'/wpi.lua" --template="'..pandoc_path..'/wpi.tex" -V attachment-folder="'..pandoc_path..'"',
+        mdtopdf = pandoc_pdf_cmd,
         mdtopdfviewerlaunch = "sioyek %outputfile%",
         mdtopdfviewerrefresh = "none",
-        mdtopdfbufferasstdin = true
+        mdtopdfbufferasstdin = true,
+
+        mdtohtml = pandoc_html_cmd,
+        mdtohtmlviewerlaunch = "live-server --quiet --browser=falkon --open=%outputfile% --watch=%outputfile% --wait=0",
+        mdtohtmlviewerrefresh = "none",
+        mdtohtmlbufferasstdin = true,
       }
     end
   }
 }
+--local function kill_live_servers()
+--  vim.fn.system("pkill -f live-server")
+--end
+-- process once & refresh
+-- vim.keymap.set('n', '<leader>po', function() knap.process_once() end)
+-- SyncTeX forward search
+-- vim.keymap.set('n', '<leader>ps', function() knap.forward_jump() end)
