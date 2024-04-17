@@ -1,5 +1,6 @@
 return {
   {
+    enabled = false,
     "frabjous/knap",
     config = function()
       local knap = require("knap")
@@ -35,8 +36,6 @@ return {
 
       -- settings
       local pandoc_path = vim.fn.stdpath('config') .. '/pandoc'
-      local md_to_pdf_path = pandoc_path .. '/liams_md_to_pdf'
-      local md_to_html_path = pandoc_path .. '/liams_md_to_html'
 
       local pandoc_extensions = table.concat({
         "hard_line_breaks",      -- respect new lines
@@ -60,14 +59,14 @@ return {
       local pandoc_pdf_cmd = table.concat({
         pandoc_base_cmd,
         "-t pdf",
-        '--lua-filter="' .. md_to_pdf_path .. '.lua"',
-        '--template="' .. md_to_pdf_path .. '.tex"',
+        '--lua-filter="' .. pandoc_path .. 'pdf.lua"',
+        '--template="' .. pandoc_path .. 'pdf.tex"',
         '-V source-dir="' .. pandoc_path .. '"'
       }, " ")
 
       local pandoc_html_cmd = table.concat({
         pandoc_base_cmd,
-        '--template="' .. md_to_html_path .. '.html"',
+        '--template="' .. pandoc_path .. 'pdf.html"',
         '--mathjax',
       }, " ")
 
