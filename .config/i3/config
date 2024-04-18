@@ -63,7 +63,7 @@ font pango:DejaVu Sans Mono 8
 # xsecurelock
 set $lock "env XSECURELOCK_SAVER=saver_blank xsecurelock"
 exec --no-startup-id xset s 300 5
-exec --no-startup-id xss-lock -n /usr/lib/xsecurelock/dimmer -l -- $lock
+exec --no-startup-id xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock
 
 # picom
 exec --no-startup-id picom --config ~/.config/picom/picom.conf -b

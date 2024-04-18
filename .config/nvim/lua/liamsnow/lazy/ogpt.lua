@@ -76,7 +76,22 @@ return {
       "nvim-telescope/telescope.nvim"
     },
     keys = {
-      { "<leader>c", "<cmd>OGPT<cr>", desc = "Open OGPT" }
-    }
+      { "<leader>c", "<cmd>OGPT<cr>", desc = "Open OGPT" },
+    },
+    init = function()
+      vim.keymap.set("n", "<leader><S-c>", function()
+        print("RUN")
+        vim.cmd(":OGPTFocus")
+        vim.api.nvim_feedkeys("<C-p>", "n", true)
+        vim.api.nvim_feedkeys("<Tab>", "n", true)
+        vim.api.nvim_feedkeys("j", "n", true)
+        vim.api.nvim_feedkeys("<CR>", "n", true)
+        vim.defer_fn(function()
+          vim.api.nvim_feedkeys("k", "n", true)
+          vim.api.nvim_feedkeys("<CR>", "n", true)
+          vim.api.nvim_feedkeys("<C-p>", "n", true)
+        end, 500)
+      end)
+    end
   }
 }
