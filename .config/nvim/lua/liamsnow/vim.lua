@@ -31,6 +31,17 @@ vim.opt.conceallevel = 0
 -- leader
 vim.g.mapleader = " "
 
+-- better split window navigation
+vim.keymap.set("n", "<A-v>", ":vsplit<CR>")
+vim.keymap.set("n", "<A-h>", "<C-w>h")
+vim.keymap.set("n", "<A-j>", "<C-w>j")
+vim.keymap.set("n", "<A-k>", "<C-w>k")
+vim.keymap.set("n", "<A-l>", "<C-w>l")
+vim.keymap.set("n", "<A-S-h>", ":vertical resize -2<CR>")
+vim.keymap.set("n", "<A-S-j>", ":resize +2<CR>")
+vim.keymap.set("n", "<A-S-k>", ":resize -2<CR>")
+vim.keymap.set("n", "<A-S-l>", ":vertical resize +2<CR>")
+
 -- move selection up/down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
