@@ -28,6 +28,9 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 vim.opt.conceallevel = 0
 
+-- shell
+vim.opt.shell = "zsh"
+
 -- leader
 vim.g.mapleader = " "
 

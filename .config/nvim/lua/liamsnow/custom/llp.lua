@@ -3,7 +3,7 @@
 --
 
 --
--- MY SETTING (WILL BE MOVED)
+-- MY SETTING (FIXME)
 --
 local pandoc_path = vim.fn.stdpath('config') .. '/pandoc'
 
@@ -114,7 +114,7 @@ local function attemp_attach_to_current_buffer()
       on_lines = on_buffer_update,
       on_reload = on_buffer_update
     })
-    on_buffer_update(nil, buf)
+    call_pandoc_on_buffer(buf)
   end
 end
 
@@ -182,19 +182,20 @@ local function toggle()
   end
 end
 
+local function output_once()
+  -- TODO
+end
+
+
+--
+-- MY KEYMAPS (FIXME)
+--
 vim.keymap.set("n", "<leader>l", toggle)
 
 -- auto stop
 vim.api.nvim_create_autocmd("VimLeavePre", {
   callback = stop
 })
-
-
---vim.keymap.set("n", "<leader>kk", function()
---  local current_buffer = vim.api.nvim_get_current_buf()
---  call_pandoc_with_buffer(current_buffer)
---end)
-
 
 
 --

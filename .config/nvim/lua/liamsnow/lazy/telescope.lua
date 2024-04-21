@@ -9,10 +9,10 @@ return {
       local builtin = require('telescope.builtin')
 
       -- Always search files
-      vim.keymap.set('n', '<Cs-p>', builtin.find_files, {})
+      vim.keymap.set('n', '<leader><S-p>', builtin.find_files, {})
 
       -- Search git with files as fallback
-      vim.keymap.set('n', '<C-p>', function()
+      vim.keymap.set('n', '<leader>p', function()
         local ok = pcall(builtin.git_files)
         if not ok then
           builtin.find_files()

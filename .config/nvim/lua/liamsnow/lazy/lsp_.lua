@@ -15,10 +15,6 @@ return {
     },
 
     config = function()
-      vim.g.netrw_browse_split = 0
-      vim.g.netrw_banner = 0
-      vim.g.netrw_winsize = 25
-
       local cmp = require('cmp')
       local cmp_lsp = require("cmp_nvim_lsp")
       local capabilities = vim.tbl_deep_extend(
@@ -43,17 +39,25 @@ return {
           end,
 
           ["lua_ls"] = function()
-            local lspconfig = require("lspconfig")
-            lspconfig.lua_ls.setup {
+            require("lspconfig").lua_ls.setup {
               capabilities = capabilities,
               settings = {
                 Lua = {
-                  runtime = { version = "Lua 5.1" },
+                  runtime = {
+                    version = 'LuaJIT', -- 'Lua 5.1'
+                    path = vim.split(package.path, ';'),
+                  },
                   diagnostics = {
-                    globals = { "vim", "it", "describe", "before_each", "after_each" },
-                  }
-                }
-              }
+                    globals = { 'vim' },
+                  },
+                  workspace = {
+                    library = {
+                      [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+                      [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+                    },
+                  },
+                },
+              },
             }
           end,
         }
@@ -64,7 +68,7 @@ return {
       cmp.setup({
         snippet = {
           expand = function(args)
-            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+            require('luasnip').lsp_expand(args.body)
           end,
         },
         mapping = cmp.mapping.preset.insert({
@@ -75,7 +79,7 @@ return {
         }),
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
-          { name = 'luasnip' }, -- For luasnip users.
+          { name = 'luasnip' },
         }, {
           { name = 'buffer' },
         })
