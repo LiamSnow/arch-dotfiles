@@ -5,8 +5,8 @@ return {
     config = function()
       local pandoc_path = vim.fn.stdpath('config') .. '/pandoc'
       local nvim_cache_path = vim.fn.stdpath('cache')
-      local output_html_file = nvim_cache_path .. '/llp.html'
-      local output_pdf_file = nvim_cache_path .. '/llp.pdf'
+      local output_html_file = 'llp.html' --nvim_cache_path .. '/llp.html'
+      local output_pdf_file = 'llp.pdf' --nvim_cache_path .. '/llp.pdf'
 
       local extensions = table.concat({
         'hard_line_breaks',      -- respect new lines
@@ -31,11 +31,12 @@ return {
       local html_config = {
         args = vim.list_extend({
           '-o', output_html_file,
-          '--lua-filter', pandoc_path .. '/html.lua',
-          '--template', pandoc_path .. '/html.html',
-          '--mathjax'
+          '-H', pandoc_path .. '/style.css',
+          '-H', pandoc_path .. '/assets/fonts.css',
+          '--mathjax',
         }, base_args),
         file = output_html_file,
+        file_relative = true,
         inject_title = true,
         viewer = {
           cmd = 'falkon',
@@ -57,6 +58,7 @@ return {
           '-V', 'source-dir="' .. pandoc_path .. '"'
         }, base_args),
         file = output_pdf_file,
+        file_relative = true,
         inject_title = false,
         viewer = {
           cmd = 'sioyek',

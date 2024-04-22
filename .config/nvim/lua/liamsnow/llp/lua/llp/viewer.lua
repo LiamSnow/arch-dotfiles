@@ -10,10 +10,16 @@ function M.launch(conf)
     end
   end
 
+  -- get file path
+  local filepath = conf.file
+  if conf.file_relative then
+    filepath = vim.loop.cwd() .. '/' .. filepath
+  end
+
   -- format args
   for i, str in ipairs(conf.viewer.args) do
     if str:find("%%file%%") then
-      conf.viewer.args[i] = str:gsub("%%file%%", conf.file)
+      conf.viewer.args[i] = str:gsub("%%file%%", filepath)
     end
   end
 

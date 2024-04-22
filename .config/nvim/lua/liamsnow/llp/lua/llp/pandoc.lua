@@ -4,14 +4,14 @@ function M.call(buf, conf)
   -- read content from buffer
   local lines = vim.api.nvim_buf_get_lines(buf, 0, -1, false)
   local content = table.concat(lines, '\n')
-  local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(buf), ":t:r")
+  local input_filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(buf), ":t:r")
 
   -- grab args
   local pandoc_args = conf.args
 
   if (conf.inject_title) then
     pandoc_args = vim.list_extend({
-      '-M', 'title=' .. filename .. ''
+      '-M', 'title=' .. input_filename
     }, pandoc_args)
   end
 
@@ -25,6 +25,7 @@ function M.call(buf, conf)
   handle = vim.loop.spawn("pandoc", {
       args = pandoc_args,
       stdio = { stdin, nil, stderr },
+      cwd = vim.loop.cwd()
     },
     function(_, _)
       stderr:read_stop()
