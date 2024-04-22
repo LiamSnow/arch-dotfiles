@@ -121,30 +121,28 @@ end
 --
 -- VIEWER
 --
+local viewerHandle
 
 local function launch_viewer()
-  local handle
-  handle = vim.loop.spawn('live-server', {
+  -- dark mode
+  vim.loop.os_setenv("QTWEBENGINE_CHROMIUM_FLAGS", "--blink-settings=forceDarkModeEnabled=true")
+
+  -- spawn falkon instance with file
+  viewerHandle = vim.loop.spawn('falkon', {
       args = {
-        '--quiet',
-        '--browser=falkon',
-        '--open=llp.html',
-        '--watch=llp.html',
-        '--wait=0'
+        nvim_cache_path .. '/llp.html',
       },
-      cwd = nvim_cache_path
     },
     function()
-      handle:close()
+      viewerHandle:close()
     end
   )
 end
 
 local function close_viewer()
-  --vim.loop.close(live_server_handle)
-  -- FIXME
-  vim.fn.system("pkill -f live-server")
-  vim.fn.system("killall falkon")
+  if viewerHandle and not viewerHandle:is_closing() then
+    viewerHandle:kill(15)
+  end
 end
 
 --
@@ -182,26 +180,27 @@ local function toggle()
   end
 end
 
-local function output_once()
+local function output_to()
   -- TODO
 end
-
-
---
--- MY KEYMAPS (FIXME)
---
-vim.keymap.set("n", "<leader>l", toggle)
 
 -- auto stop
 vim.api.nvim_create_autocmd("VimLeavePre", {
   callback = stop
 })
 
+--
+-- MY KEYMAPS (FIXME)
+--
+vim.keymap.set("n", "<leader>l", toggle)
+
+
 
 --
 -- FOR DEBUGGING PANDOC (WILL IMPLENT BY DEFAULT EVENTUALLY)
 --
--- Resources: https://teukka.tech/vimloop.html, https://github.com/luvit/luv/blob/master/docs.md#uv_process_t--process-handle
+-- Resources: https://teukka.tech/vimloop.html
+-- https://github.com/luvit/luv/blob/master/docs.md#uv_process_t--process-handle
 --
 --  -- spawn pandoc command
 --  local stdin = vim.loop.new_pipe(false)
