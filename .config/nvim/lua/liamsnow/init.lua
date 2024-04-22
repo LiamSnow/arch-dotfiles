@@ -1,6 +1,5 @@
 require("liamsnow.vim")
-require("liamsnow.lazy_init")
-require("liamsnow.custom.llp")
+require("liamsnow.lazyinit")
 
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd

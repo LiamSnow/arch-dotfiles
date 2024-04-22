@@ -11,10 +11,10 @@ return {
 
       local ufo = require('ufo')
 
-      vim.keymap.set('n', 'zR', ufo.openAllFolds)
-      vim.keymap.set('n', 'zM', ufo.closeAllFolds)
-      vim.keymap.set('n', 'zr', ufo.openFoldsExceptKinds)
-      vim.keymap.set('n', 'zm', ufo.closeFoldsWith)
+      vim.keymap.set('n', 'zR', function() ufo:openAllFolds() end)
+      vim.keymap.set('n', 'zM', function() ufo:closeAllFolds() end)
+      vim.keymap.set('n', 'zr', function() ufo:openFoldsExceptKinds() end)
+      vim.keymap.set('n', 'zm', function() ufo:closeFoldsWith() end)
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities.textDocument.foldingRange = {
