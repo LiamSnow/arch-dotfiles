@@ -2,12 +2,12 @@ local pandoc = require("llp.pandoc")
 
 local llp_group = vim.api.nvim_create_augroup('llp', {})
 local active_buffer = nil
-local conf
+local conf = nil
 
 local M = {}
 
 local function on_buffer_update(_, buf)
-  if (vim.b.llp_running and buf == active_buffer) then
+  if (buf == active_buffer) then
     return pandoc.call(buf, conf)
   end
 end
@@ -43,7 +43,9 @@ function M.start(new_conf)
 end
 
 function M.stop()
+  active_buffer = nil
   vim.api.nvim_clear_autocmds({ group = llp_group })
+  pandoc.stop()
 end
 
 return M

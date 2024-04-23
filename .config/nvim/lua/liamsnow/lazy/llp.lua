@@ -4,9 +4,8 @@ return {
     dir = "~/.config/nvim/lua/liamsnow/llp",
     config = function()
       local pandoc_path = vim.fn.stdpath('config') .. '/pandoc'
-      local nvim_cache_path = vim.fn.stdpath('cache')
-      local output_html_file = 'llp.html' --nvim_cache_path .. '/llp.html'
-      local output_pdf_file = 'llp.pdf' --nvim_cache_path .. '/llp.pdf'
+      local output_html_file = 'llp.html'
+      local output_pdf_file = 'llp.pdf'
 
       local extensions = table.concat({
         'hard_line_breaks',      -- respect new lines
@@ -15,7 +14,7 @@ return {
         'rebase_relative_paths', -- image links
         'emoji',                 -- emojis with :smile:
         'short_subsuperscripts', -- x^2 or O~2
-        'wikilinks_title_after_pipe'
+        'wikilinks_title_after_pipe',
       }, '+')
 
       local base_args = {
@@ -36,7 +35,7 @@ return {
           '--mathjax',
         }, base_args),
         file = output_html_file,
-        file_relative = true,
+        file_relative = false,
         inject_title = true,
         viewer = {
           cmd = 'falkon',
@@ -58,7 +57,7 @@ return {
           '-V', 'source-dir="' .. pandoc_path .. '"'
         }, base_args),
         file = output_pdf_file,
-        file_relative = true,
+        file_relative = false,
         inject_title = false,
         viewer = {
           cmd = 'sioyek',
@@ -67,6 +66,7 @@ return {
       }
 
       vim.keymap.set("n", "<leader>l", function() llp.toggle(html_config) end)
+      vim.keymap.set("n", "<leader><S-l>", function() llp.toggle(pdf_config) end)
     end
   }
 }

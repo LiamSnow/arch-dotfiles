@@ -26,6 +26,7 @@ function M.launch(conf)
   -- spawn instance
   viewerHandle = vim.loop.spawn(conf.viewer.cmd, {
       args = conf.viewer.args,
+      cwd = vim.loop.cwd()
     },
     function()
       viewerHandle:close()
