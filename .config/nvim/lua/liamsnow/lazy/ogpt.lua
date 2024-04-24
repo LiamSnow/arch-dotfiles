@@ -37,7 +37,7 @@ return {
         },
         openai = {
           enabled = true,
-          model = "gpt-4",
+          model = "gpt-4-turbo",
           api_host = "https://api.openai.com",
           api_key = openai_key,
           api_params = {

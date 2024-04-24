@@ -30,6 +30,7 @@ return {
           "lua_ls",
           "rust_analyzer",
           "gopls",
+          "pyright"
         },
         handlers = {
           function(server_name) -- default handler (optional)
@@ -44,7 +45,7 @@ return {
               settings = {
                 Lua = {
                   runtime = {
-                    version = 'LuaJIT', -- 'Lua 5.1'
+                    version = 'LuaJIT',
                     path = vim.split(package.path, ';'),
                   },
                   diagnostics = {
@@ -52,14 +53,33 @@ return {
                   },
                   workspace = {
                     library = {
-                      [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-                      [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
+                      vim.fn.expand('$VIMRUNTIME/lua'),
+                      vim.fn.stdpath('config') .. '/lua'
                     },
                   },
                 },
               },
             }
           end,
+
+          ["pyright"] = function()
+            require("lspconfig").pyright.setup {
+              capabilities = capabilities,
+              settings = {
+                pyright = {
+                  autoImportCompletion = true,
+                },
+                python = {
+                  analysis = {
+                    autoSearchPaths = true,
+                    diagnosticMode = 'openFilesOnly',
+                    useLibraryCodeForTypes = true,
+                    typeCheckingMode = 'off'
+                  }
+                }
+              }
+            }
+          end
         }
       })
 
