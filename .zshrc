@@ -1,15 +1,32 @@
-# Lines configured by zsh-newuser-install
+# history
 HISTFILE=~/.histfile
-HISTSIZE=1000
+HISTSIZE=10000
 SAVEHIST=10000
+
+CASE_SENSITIVE="false"
+
 bindkey -e
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
 zstyle :compinstall filename '/home/liams/.zshrc'
 
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
 
-# Dotfile Alias
+# options
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt EXTENDED_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS
+setopt HIST_VERIFY
+
+setopt CDABLE_VARS
+setopt PROMPT_SUBST
+setopt CORRECT
+setopt GLOBDOTS
+
+# dotfile alias
 alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
+
+# starship
+eval "$(starship init zsh)"
