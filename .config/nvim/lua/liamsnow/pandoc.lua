@@ -64,14 +64,8 @@ local function pandoc_view()
   }):start()
 end
 
-local function pandoc_run_and_view()
-  pandoc_run()
-  pandoc_view()
-end
-
 vim.api.nvim_create_user_command("PandocRun", pandoc_run, {})
 vim.api.nvim_create_user_command("PandocView", pandoc_view, {})
-vim.api.nvim_create_user_command("PandocRunAndView", pandoc_run_and_view, {})
 
-vim.keymap.set("n", "<C-S-p>", function() pandoc_run() end)
-vim.keymap.set("n", "<C-S-A-p>", function() pandoc_run() end)
+vim.keymap.set("n", "<C-p>", pandoc_run)
+vim.keymap.set("n", "<S-P>", pandoc_view)
