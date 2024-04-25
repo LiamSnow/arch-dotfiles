@@ -15,10 +15,8 @@ CASE_SENSITIVE="false"
 bindkey -e
 zstyle :compinstall filename '/home/liams/.zshrc'
 
-source ~/.config/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-
-# autoload -Uz compinit
-# compinit
+autoload -Uz compinit
+compinit
 
 # options
 setopt INC_APPEND_HISTORY
