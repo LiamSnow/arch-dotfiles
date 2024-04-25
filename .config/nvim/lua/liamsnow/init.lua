@@ -1,6 +1,7 @@
 require("liamsnow.vim")
 require("liamsnow.lazyinit")
 require("liamsnow.pandoc")
+require("liamsnow.cheatsheet")
 
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd

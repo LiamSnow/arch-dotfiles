@@ -68,4 +68,5 @@ vim.api.nvim_create_user_command("PandocRun", pandoc_run, {})
 vim.api.nvim_create_user_command("PandocView", pandoc_view, {})
 
 vim.keymap.set("n", "<C-p>", pandoc_run)
-vim.keymap.set("n", "<S-P>", pandoc_view)
+vim.keymap.set("n", "<leader><S-P>", pandoc_view)
+

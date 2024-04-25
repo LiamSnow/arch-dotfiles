@@ -4,7 +4,13 @@ return {
     tag = '0.1.6',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
-      require('telescope').setup({})
+      require('telescope').setup({
+        defaults = {
+          preview = {
+            filesize_limit = 0.1, -- MB
+          },
+        }
+      })
 
       local builtin = require('telescope.builtin')
 

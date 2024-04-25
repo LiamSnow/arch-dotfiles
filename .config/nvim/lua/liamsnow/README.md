@@ -1,3 +1,2 @@
-
 ## TODO
- - OGPT fix Antropic issue during streaming (newlines are added at the beginning of chunks instead of end -- opposite of openai)
+ 1. Switch pandoc to CommonMark (match peek.nvim config)
