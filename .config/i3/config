@@ -48,7 +48,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 4%+
 no_focus [title="^Peek preview$"]
 
 # maim screenshot
-bindsym $mod+Print exec maim -s ~/Screenshots/screenshot-$(date +%Y-%m-%d-%H-%M-%S).png
+bindsym $mod+Print exec maim -s ~/Documents/Screenshots/screenshot-$(date +%Y-%m-%d-%H-%M-%S).png
 
 # status bar
 bar {
