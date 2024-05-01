@@ -65,7 +65,7 @@ bar {
         inactive_workspace #000000 #000000 #888888
         urgent_workspace #000000 #ff0000 #ffffff
     }
-    tray_output none
+    # tray_output none
 }
 
 # use Mouse+$mod to drag floating windows to their wanted position
