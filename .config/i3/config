@@ -1,6 +1,8 @@
 # Liam's I3 Config
 
 # consts
+set $IS_LAPTOP [machine="RISC-IV-LAP"]
+set $IS_PC [machine="RISC-IV-STATION"]
 set $terminal kitty
 set $browser firefox
 set $mod Mod4
@@ -40,9 +42,17 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
+# Player Control
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+
 # brightness control
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-val=0 -q set 2%-
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 4%+
+
+# wallpaper
+exec --no-startup-id feh --bg-scale ~/.config/wallpapers/macos_abstract.jpg
 
 # startup apps
 exec --no-startup-id nextcloud --background
