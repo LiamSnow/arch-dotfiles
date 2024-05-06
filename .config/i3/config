@@ -1,8 +1,8 @@
 # Liam's I3 Config
 
+include ~/.config/i3/`hostname`.conf
+
 # consts
-set $IS_LAPTOP [machine="RISC-IV-LAP"]
-set $IS_PC [machine="RISC-IV-STATION"]
 set $terminal kitty
 set $browser firefox
 set $mod Mod4
@@ -18,11 +18,6 @@ client.focused_inactive #222222 #000000 #ffffff #ffffff #222222
 client.urgent           #ff0000 #000000 #ffffff #ffffff #ff0000
 client.unfocused        #000000 #000000 #ffffff #ffffff #000000
 client.background #000000
-
-default_border pixel 1
-default_floating_border pixel 1
-smart_borders on
-hide_edge_borders vertical
 
 # fonts
 font pango:monospace 8
