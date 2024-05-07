@@ -1,6 +1,6 @@
 # Liam's I3 Config
 
-include ~/.config/i3/`hostname`.conf
+include ~/.config/i3/`uname -n`.conf
 
 # consts
 set $terminal kitty
