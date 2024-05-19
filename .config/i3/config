@@ -19,6 +19,11 @@ client.urgent           #ff0000 #000000 #ffffff #ffffff #ff0000
 client.unfocused        #000000 #000000 #ffffff #ffffff #000000
 client.background #000000
 
+default_border pixel 1
+default_floating_border pixel 1
+smart_borders on
+hide_edge_borders vertical
+
 # fonts
 font pango:monospace 8
 #font pango:DejaVu Sans Mono 8
@@ -32,7 +37,6 @@ exec --no-startup-id xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock
 exec --no-startup-id kitty -e zsh -c 'neofetch; zsh'
 
 # Pulse Audio
-exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ on
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -46,36 +50,19 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-val=0 -q set 2%-
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 4%+
 
-# wallpaper
-exec --no-startup-id feh --bg-scale ~/.config/wallpapers/macos_abstract.jpg
+# emojis
+bindsym $mod+semicolon exec --no-startup-id emoji-picker
 
 # startup apps
-exec --no-startup-id nextcloud --background
+exec --no-startup-id keepassxc
 exec --no-startup-id 1password --silent
+exec --no-startup-id nextcloud --background
 
 # peek.nvim
 no_focus [title="^Peek preview$"]
 
 # maim screenshot
 bindsym $mod+Print exec maim -s ~/Documents/Screenshots/screenshot-$(date +%Y-%m-%d-%H-%M-%S).png
-
-# status bar
-bar {
-    font pango:monospace 10
-    position top
-    status_command /usr/bin/i3status-rs ~/.config/i3status-rust/config.toml
-    height 16
-    colors {
-        separator #ffffff
-        background #000000
-        statusline #ffffff
-        focused_workspace #000000 #000000 #ffffff
-        active_workspace #000000 #000000 #ffffff
-        inactive_workspace #000000 #000000 #888888
-        urgent_workspace #000000 #ff0000 #ffffff
-    }
-    # tray_output none
-}
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

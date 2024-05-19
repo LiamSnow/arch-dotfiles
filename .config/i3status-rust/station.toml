@@ -1,0 +1,48 @@
+[theme.overrides]
+separator = " │ "
+
+[[block]]
+block = "temperature"
+format = "SYSTEM $average"
+
+[[block]]
+block = "nvidia_gpu"
+format = "GPU $utilization $memory $temperature $power"
+
+[[block]]
+block = "cpu"
+format = "CPU {$utilization $barchart $frequency}"
+
+[[block]]
+block = "memory"
+format = "MEM {$mem_used.eng(w:3)}"
+
+[[block]]
+block = "hueshift"
+format = "HUE {$temperature}k"
+
+[[block]]
+block = "bluetooth"
+mac = "AC:BF:71:F3:82:01"
+disconnected_format = ""
+format = "RISC-IV-BUDS"
+[block.battery_state]
+"0..20" = "critical"
+"21..70" = "warning"
+"71..100" = "good"
+
+[[block]]
+block = "sound"
+format = "VOL {$volume.eng(w:2)|}"
+driver = "pulseaudio"
+
+[[block]]
+block = "net"
+device = "wlo1"
+format = "WIFI {$ssid $signal_strength $frequency DOWN $speed_down $graph_down UP $speed_up $graph_up |Wired connection}"
+
+[[block]]
+block = "time"
+interval = 5
+format = "$timestamp.datetime(f:'%m/%d/%Y %I:%M %p') "
+
