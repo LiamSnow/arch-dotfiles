@@ -225,35 +225,25 @@ makepkg -si
 
 1. `gh auth login`
 
-### Emojis
+### Private Files
 
-1. Copy `~/.config/fontconfig/fonts.conf`
-
-### Trackpad
-
-1. Copy `/etc/X11/xorg.conf.d/30-touchpad.conf`
+1. Clone Repo
+2. Run `linker.sh`
 
 ### DNS
 
-1. Copy `/etc/unbound/unbound.conf`
-2. Copy `/etc/resolvconf.conf`
+1. Setup: `sudo unbound-control-setup`
+2. Start and Enable `sudo systemctl enable --now unbound.service`
 3. Resolv: `sudo resolvconf -u`
-4. Setup: `sudo unbound-control-setup`
-5. Start and Enable `sudo systemctl enable --now unbound.service`
 
 ### Firewall
 
-1. Copy `/etc/nftables.conf`
-2. Enable `sudo systemctl enable --now nftables`
+1. Enable `sudo systemctl enable --now nftables`
 
 ### Power Management
 
-1. Enable `thermald`: `sudo systemctl enable --now thermald`
-
-### XSecureLock
-
-1. Copy `xsecurelock` to `/usr/lib/systemd/system-sleep/`
-2. Make executable with `chmod +x`
+1. Enable: `sudo systemctl enable --now thermald`
+2. Enable Recs in Powertop
 
 ### Microcode
 

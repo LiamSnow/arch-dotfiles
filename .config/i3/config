@@ -3,8 +3,6 @@
 include ~/.config/i3/`uname -n`.conf
 
 # consts
-set $terminal kitty
-set $browser firefox
 set $mod Mod4
 set $up k
 set $down j
@@ -41,10 +39,10 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-# Player Control
-bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
-bindsym XF86AudioNext exec --no-startup-id playerctl next
-bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+# Spotify Control
+bindsym XF86AudioPlay exec --no-startup-id playerctl --player=spotify play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl --player=spotify next
+bindsym XF86AudioPrev exec --no-startup-id playerctl --player=spotify previous
 
 # brightness control
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-val=0 -q set 2%-
@@ -54,9 +52,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 4%+
 bindsym $mod+semicolon exec --no-startup-id emoji-picker
 
 # startup apps
-exec --no-startup-id keepassxc
 exec --no-startup-id 1password --silent
-exec --no-startup-id nextcloud --background
 
 # peek.nvim
 no_focus [title="^Peek preview$"]
@@ -72,8 +68,13 @@ floating_modifier $mod
 # tiling_drag modifier titlebar
 
 # quick launch
-bindsym $mod+Return exec $terminal
-bindsym $mod+Shift+Return exec $browser
+bindsym $mod+Return exec kitty
+bindsym $mod+apostrophe exec kitty -o background=#040404 ssh liams@risc-iv-monolith
+bindsym $mod+Shift+Return exec firefox
+bindsym $mod+Shift+apostrophe exec firefox --private-window
+
+# quick background
+bindsym $mod+slash exec feh --fullscreen --hide-pointer --borderless ~/.config/wallpapers/macos_abstract.jpg --no-screen-clip --zoom 100
 
 # kill focused window
 bindsym $mod+Shift+q kill

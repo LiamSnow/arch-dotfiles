@@ -1,10 +1,11 @@
 ## Desktop
 xorg-server xorg-xinit
-i3-wm i3status-rust dmenu feh
+i3-wm i3status-rust dmenu
 xsecurelock xss-lock
 maim
 xclip
-Desktop Only: picom
+viu
+XX Desktop Only: picom
 AUR: x11-emoji-picker-git
 
 ## Terminal

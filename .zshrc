@@ -17,6 +17,7 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
+#zinit ice depth=1; zinit light jeffreytse/zsh-vi-mode
 
 # snippets
 zinit snippet OMZP::git
@@ -28,7 +29,9 @@ zinit snippet OMZP::command-not-found
 autoload -U compinit && compinit
 zinit cdreplay -q
 
-# emacs keybindings
+# keybindings
+#bindkey -v
+#KEYTIMEOUT=1
 bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
@@ -64,19 +67,22 @@ export PATH
 
 # enviornment
 export EDITOR=nvim
+export BROWSER=firefox
 
 # alias
 alias v='nvim'
+alias vs='sudoedit'
 alias y='yazi'
+alias sc='sudo systemctl'
 alias s='y ~/Sync/'
 alias a='y ~/Sync/Arch'
+alias hg='history 0 | rg'
 alias ls='lsd'
 alias nvc='v ~/.config/nvim'
 alias zshrc='v ~/.zshrc'
 alias sto='stow --dir=/home/liams/Sync/Arch --target=/home/liams .'
 alias todo='v ~/Sync/TODO.md'
 alias pack='v ~/Sync/Arch/PACKAGES.md'
-alias img="kitty +kitten icat"
 
 # yazi
 function y() {
