@@ -81,8 +81,9 @@ alias ls='lsd'
 alias nvc='v ~/.config/nvim'
 alias zshrc='v ~/.zshrc'
 alias sto='stow --dir=/home/liams/Sync/Arch --target=/home/liams .'
-alias todo='v ~/Sync/TODO.md'
 alias pack='v ~/Sync/Arch/PACKAGES.md'
+alias setup='v ~/Sync/Arch/SETUP.md'
+alias shop='todo --config ~/.config/todoman/shopping.py'
 
 # yazi
 function y() {

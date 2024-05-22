@@ -191,11 +191,12 @@ sudo nmcli dev wifi con "SSID" --ask
 
 ### Packages, Dotfiles, and GUI
 
-1. Install Packages (See \[\[Arch Packages\]\])
-2. Get dotfiles from a flashdrive copy of NextCloud
-3. Set Shell to Zsh: `chsh -s /bin/zsh`
-4. Make Executable `chmod +x ~/.xinitrc`
-5. Run `startx`
+1. Install PACKAGES.md
+2. Set Shell to Zsh: `chsh -s /bin/zsh`
+3. Copy Sync from Flashdrive
+4. Run Stow
+5. Make Executable `chmod +x ~/.xinitrc`
+6. Run `startx`
 
 ### Yay
 
@@ -207,7 +208,7 @@ cd yay
 makepkg -si
 ```
 
-1. Install packages \[\[Arch Packages\]\]
+1. Install PACKAGES.md
 
 ### NVIDIA Drivers
 
@@ -225,10 +226,11 @@ makepkg -si
 
 1. `gh auth login`
 
-### Private Files
+### Syncthing
 
-1. Clone Repo
-2. Run `linker.sh`
+1. Start `sudo systemctl enable -- now syncthing@liams.service`
+2. Run Stow
+2. Run `linker.sh` in arch-priv
 
 ### DNS
 

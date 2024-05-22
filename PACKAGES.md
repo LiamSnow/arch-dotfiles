@@ -45,6 +45,10 @@ AUR: ttf-ibmplex-mono-nerd
 python python-pynvim  python-openai
 AUR: python-anthropic
 
+## CalDAV
+khal
+todoman
+
 ## Apps
 stow
 syncthing

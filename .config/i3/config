@@ -11,8 +11,8 @@ set $right l
 
 # windows
 #                       border  bckgnd  text    indicat child border
-client.focused          #222222 #000000 #ffffff #ffffff #222222
-client.focused_inactive #222222 #000000 #ffffff #ffffff #222222
+client.focused          #999999 #000000 #999999 #999999 #990099
+client.focused_inactive #999999 #000000 #999999 #999999 #990099
 client.urgent           #ff0000 #000000 #ffffff #ffffff #ff0000
 client.unfocused        #000000 #000000 #ffffff #ffffff #000000
 client.background #000000
@@ -69,12 +69,14 @@ floating_modifier $mod
 
 # quick launch
 bindsym $mod+Return exec kitty
-bindsym $mod+apostrophe exec kitty -o background=#040404 ssh liams@risc-iv-monolith
+bindsym $mod+apostrophe exec kitty -o background=#060006 ssh liams@risc-iv-monolith
 bindsym $mod+Shift+Return exec firefox
 bindsym $mod+Shift+apostrophe exec firefox --private-window
+bindsym $mod+Shift+s exec spotify
+bindsym $mod+Shift+i exec 1password
 
 # quick background
-bindsym $mod+slash exec feh --fullscreen --hide-pointer --borderless ~/.config/wallpapers/macos_abstract.jpg --no-screen-clip --zoom 100
+bindsym $mod+slash exec feh --fullscreen --hide-pointer --borderless ~/.config/wallpapers/macos_gradient.jpg --no-screen-clip --zoom 100
 
 # kill focused window
 bindsym $mod+Shift+q kill
