@@ -1,12 +1,22 @@
-## Desktop
+## Xorg Old
 xorg-server xorg-xinit
 i3-wm i3status-rust dmenu
 xsecurelock xss-lock
 maim
 xclip
-viu
 XX Desktop Only: picom
 AUR: x11-emoji-picker-git
+
+## Desktop
+hyprland qt5-wayland qt6-wayland egl-wayland
+waybar
+hyprpaper
+mako
+waylock
+
+TODO: clipboard, screenshot, wallpaper
+
+viu
 
 ## Terminal
 zsh
@@ -49,10 +59,15 @@ AUR: python-anthropic
 khal
 todoman
 
+## Security
+yubikey-manager (enable pcscd)
+pam-u2f
+AUR: 1password
+
 ## Apps
 stow
 syncthing
 tailscale
-firefox
+brave
 AUR: spotify
-AUR: 1password
+

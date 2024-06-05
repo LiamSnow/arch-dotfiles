@@ -17,7 +17,6 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
-#zinit ice depth=1; zinit light jeffreytse/zsh-vi-mode
 
 # snippets
 zinit snippet OMZP::git
@@ -30,8 +29,6 @@ autoload -U compinit && compinit
 zinit cdreplay -q
 
 # keybindings
-#bindkey -v
-#KEYTIMEOUT=1
 bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
@@ -67,7 +64,7 @@ export PATH
 
 # enviornment
 export EDITOR=nvim
-export BROWSER=firefox
+export BROWSER=brave-beta
 
 # alias
 alias v='nvim'
@@ -84,6 +81,7 @@ alias sto='stow --dir=/home/liams/Sync/Arch --target=/home/liams .'
 alias pack='v ~/Sync/Arch/PACKAGES.md'
 alias setup='v ~/Sync/Arch/SETUP.md'
 alias shop='todo --config ~/.config/todoman/shopping.py'
+alias cal='khal interactive'
 
 # yazi
 function y() {
@@ -101,5 +99,5 @@ alias pip='env/bin/pip'
 # 1password-cli
 eval "$(op completion zsh)"; compdef _op op
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# To customize prompt, run `p10k configure` or edit ~/Sync/Arch/.p10k.zsh.
+[[ ! -f ~/Sync/Arch/.p10k.zsh ]] || source ~/Sync/Arch/.p10k.zsh

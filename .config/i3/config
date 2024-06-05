@@ -2,7 +2,7 @@
 
 include ~/.config/i3/`uname -n`.conf
 
-# consts
+# const
 set $mod Mod4
 set $up k
 set $down j
@@ -11,16 +11,16 @@ set $right l
 
 # windows
 #                       border  bckgnd  text    indicat child border
-client.focused          #999999 #000000 #999999 #999999 #990099
-client.focused_inactive #999999 #000000 #999999 #999999 #990099
+client.focused          #990099 #000000 #999999 #999999 #990099
+client.focused_inactive #990099 #000000 #999999 #999999 #990099
 client.urgent           #ff0000 #000000 #ffffff #ffffff #ff0000
 client.unfocused        #000000 #000000 #ffffff #ffffff #000000
 client.background #000000
 
-default_border pixel 1
-default_floating_border pixel 1
+default_border pixel 2
+default_floating_border pixel 2
 smart_borders on
-hide_edge_borders vertical
+#hide_edge_borders vertical
 
 # fonts
 font pango:monospace 8
@@ -34,6 +34,9 @@ exec --no-startup-id xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock
 # base view
 exec --no-startup-id kitty -e zsh -c 'neofetch; zsh'
 
+# startup apps
+exec --no-startup-id 1password --silent
+
 # Pulse Audio
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
@@ -44,15 +47,8 @@ bindsym XF86AudioPlay exec --no-startup-id playerctl --player=spotify play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl --player=spotify next
 bindsym XF86AudioPrev exec --no-startup-id playerctl --player=spotify previous
 
-# brightness control
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl --min-val=0 -q set 2%-
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -q set 4%+
-
 # emojis
 bindsym $mod+semicolon exec --no-startup-id emoji-picker
-
-# startup apps
-exec --no-startup-id 1password --silent
 
 # peek.nvim
 no_focus [title="^Peek preview$"]
@@ -69,11 +65,12 @@ floating_modifier $mod
 
 # quick launch
 bindsym $mod+Return exec kitty
-bindsym $mod+apostrophe exec kitty -o background=#060006 ssh liams@risc-iv-monolith
-bindsym $mod+Shift+Return exec firefox
-bindsym $mod+Shift+apostrophe exec firefox --private-window
-bindsym $mod+Shift+s exec spotify
-bindsym $mod+Shift+i exec 1password
+bindsym $mod+Shift+Return exec kitty -o background=#060006 ssh liams@risc-iv-monolith
+bindsym $mod+apostrophe exec brave
+bindsym $mod+s exec spotify
+bindsym $mod+i exec 1password
+bindsym $mod+r exec rnote
+bindsym $mod+c exec kitty -e zsh -c 'khal interactive'
 
 # quick background
 bindsym $mod+slash exec feh --fullscreen --hide-pointer --borderless ~/.config/wallpapers/macos_gradient.jpg --no-screen-clip --zoom 100
@@ -118,8 +115,8 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # container layout
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -180,7 +177,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-msg exit && clear"
 
 # resize
-bindsym $mod+Shift+Ctrl+$left resize shrink width 10 px
-bindsym $mod+Shift+Ctrl+$down resize grow height 10 px
-bindsym $mod+Shift+Ctrl+$up resize shrink height 10 px
-bindsym $mod+Shift+Ctrl+$right resize grow width 10 px
+bindsym $mod+Shift+Ctrl+$left resize shrink width 40 px
+bindsym $mod+Shift+Ctrl+$down resize grow height 40 px
+bindsym $mod+Shift+Ctrl+$up resize shrink height 40 px
+bindsym $mod+Shift+Ctrl+$right resize grow width 40 px
