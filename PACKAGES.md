@@ -1,4 +1,4 @@
-## Xorg Old
+## Xorg
 xorg-server xorg-xinit
 i3-wm i3status-rust dmenu
 xsecurelock xss-lock
@@ -26,6 +26,7 @@ ruby npm
 
 ## Network
 openresolv
+ufw
 
 ## Laptop
 thermald powertop brightnessctl
