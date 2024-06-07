@@ -10,8 +10,6 @@ without a desktop enviornment. Use a tiling window manager
 and replace VSCode/JetBrains with Neovim so you look like a cool
 hacker man and maybe increase productivity.
 
- > "Linux isn't hard, operating systems are"
-
 I grew up using MacOS (~2010-2017) and was genuinely pretty
 happy with - although I didn't do much besides use a web
 browser. I was always very frustrated with how little I could customize
