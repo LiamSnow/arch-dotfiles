@@ -7,7 +7,7 @@ Do not use this directly, always reference the [Arch Wiki Installation Guide](ht
 
 ### Partition Disk
 
-```
+```bash
 fdisk -l
 fdisk TARGET_DEVICE
 p # print partitions
@@ -23,7 +23,7 @@ w # save changes
 Swap is optional, and replace `EFI` and `LUKS` with values from above.
 (ex. `/dev/nvme0n1p1` and `p2`)
 
-```
+```bash
 mkfs.fat -F32 /dev/EFI
 cryptsetup luksFormat /dev/LUKS
 cryptsetup open /dev/LUKS cryptlvm
@@ -43,13 +43,13 @@ mount --mkdir /dev/EFI /mnt/boot
 
 ### Install Essentials
 
-```
+```bash
 pacstrap -i /mnt base base-devel linux linux-firmware grub networkmanager cryptsetup lvm2 neovim vim efibootmgr intel-ucode sof-firmware linux-headers zsh
 ```
 
 ## Configure System
 
-```
+```bash
 genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt zsh   # :)
 ln -sf /usr/share/zoneinfo/America/New_York /etc/localtime
@@ -67,7 +67,7 @@ mkinitcpio -p linux
 
 ### Users
 
-```
+```bash
 passwd -l root # disable root
 useradd -m -G wheel USERNAME
 passwd USERNAME
@@ -78,7 +78,7 @@ EDITOR=nvim visudo # uncomment `%wheel ALL=(ALL) ALL`
 
 TODO Switch to Systemd-Boot
 
-```
+```bash
 blkid >> /etc/default/grub
 nvim /etc/default/grub
 # Remove all from `blkid` but copy UUID of `crypto_LUKS` and UUID of decrypted root partition `btrfs` and put below

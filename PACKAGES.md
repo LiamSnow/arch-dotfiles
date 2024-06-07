@@ -53,6 +53,7 @@ todoman
 ## Security
 yubikey-manager (enable pcscd)
 pam-u2f
+polkit-gnome gnome-keyring
 AUR: 1password
 
 ## Apps

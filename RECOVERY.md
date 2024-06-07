@@ -10,7 +10,7 @@ Insert Arch Installer USB Drive and boot into it
 
 ### 2
 
-```
+```bash
 fdisk -l  # find LUKS volume (prob. `/dev/nvmeXn1p2`)
 cryptsetup open /dev/LUKS cryptlvm
 mount /dev/lg/root /mnt     # logical volumes may be called something else (ie not lg) -- I think lvs lists them
@@ -20,7 +20,7 @@ mount --mkdir /dev/EFI /mnt/boot  # optional but required for mkinitcpio stuff
 
 ### 3
 
-```
+```bash
 arch-chroot /mnt zsh   # :)
 ```
 
