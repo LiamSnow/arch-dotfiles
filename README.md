@@ -110,7 +110,8 @@ server running many services.
 Currently running Xorg + I3, but once NVIDIA 560
 drivers come out I will promptly switch to Wayland + Hyprland.
 
-__Window Manager [I3](.config/i3)__
+### Window Manager [I3](.config/i3)
+
 Basic semi-decent looking I3 config. Automatically
 changes config depending on machine hostname (for
 different configs between Laptop and PC).
@@ -122,26 +123,38 @@ are heavily modified for usability/my preferences
 Dmenu ($mod+D) is used as a backup, most apps can
 be launched with a simple mod keybind.
 
-__Editor [Neovim](https://github.com/LiamSnow/nvim-config)__
+### Editor [Neovim](https://github.com/LiamSnow/nvim-config)
+
 See README.md in [nvim-config](https://github.com/LiamSnow/nvim-config) repo.
 
-__Status Bar [I3Status-Rust](.config/i3status-rust)__
+### Status Bar [I3Status-Rust](.config/i3status-rust)
+
 Lightweight, high performance status bar written in the
 best language.
 
-__CalDAV [khal](.config/khal) and [todoman](.config/todoman)__
+### CalDAV [khal](.config/khal) and [todoman](.config/todoman)
+
 I run Radicale CalDAV on my home server that syncs files
-to `.calendars` over my Tailnet. This allows me to sync
+to `.calendars` (via `vdirsyncer` which allows khal and todoman to view/edit them) over my Tailnet.
+This allows me to sync
 contacts, reminders, and my calendars between my computers
 and iPhone (💀).
 
-Then, I use todoman which is nice lightweight CLI tool
-that lets me easily view and edit my reminders. I use
-Khal which is an awesome CLI tool for working with my
-calendars. Honestly, just using Khal has made me use
-and like using my calendars so much more.
+Todoman is nice lightweight CLI tool
+that lets me easily view and edit my reminders. Nothing
+too special, but basically exactly what I needed.
 
-__Terminal [kitty](.config/kitty) and Shell [Zsh](.zshrc)__
+Khal is an awesome CLI/TUI tool for working with my
+calendars. It has
+an interactive/TUI mode to use a calendar just like
+any other but with a keyboard forward design. But the
+best part is the CLI tool. I can easily search through
+all my events, list events for a certain timespan, and
+more. Khal has made me love using my calendar, which
+means I use it a lot more.
+
+### Terminal [kitty](.config/kitty) and Shell [Zsh](.zshrc)
+
 Kitty is an awesome GPU based terminal emulator and lets
 me do psuedo transparency.
 
@@ -153,7 +166,8 @@ my terminal speed massively. I also configure a ton
 of aliases, so for most common tasks I only need to use
 one or two characters (no more typing out `sudo systemctl` :)).
 
-__File Explorer [yazi](.config/yazi)__
+### File Explorer [yazi](.config/yazi)
+
 Similar to ranger, but written in the best language (making it
 blazingly fast!). After using yazi I could not imagine
 going back to a GUI file explorer, its the best thing ever.
