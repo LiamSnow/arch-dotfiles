@@ -1,6 +1,6 @@
 ## Liam's Arch Setup Manaul
 
-This is an extension of (SETUP.md)[SETUP.md] and can replace
+This is an extension of [SETUP.md](SETUP.md) and can replace
 the instructions for `archinstall`.
 
 Do not use this directly, always reference the [Arch Wiki Installation Guide](https://wiki.archlinux.org/title/Installation_guide).
