@@ -7,17 +7,6 @@ xclip
 XX Desktop Only: picom
 AUR: x11-emoji-picker-git
 
-## Desktop
-hyprland qt5-wayland qt6-wayland egl-wayland
-waybar
-hyprpaper
-mako
-waylock
-
-TODO: clipboard, screenshot, wallpaper
-
-viu
-
 ## Terminal
 zsh
 AUR: zinit-git
@@ -36,7 +25,7 @@ posix mesa
 ruby npm
 
 ## Network
-unbound nftables openresolv
+openresolv
 
 ## Laptop
 thermald powertop brightnessctl
@@ -45,7 +34,8 @@ thermald powertop brightnessctl
 pandoc texlive
 
 ## Audio
-pulseaudio playerctl
+pipewire pipewire-alsa pipewire-pulse wireplumber
+playerctl
 
 ## Fonts
 noto-fonts-emoji
@@ -68,6 +58,6 @@ AUR: 1password
 stow
 syncthing
 tailscale
-brave
-AUR: spotify
+AUR: brave
+AUR: spotify-launcher
 

@@ -2,13 +2,6 @@
 
 include ~/.config/i3/`uname -n`.conf
 
-# const
-set $mod Mod4
-set $up k
-set $down j
-set $left h
-set $right l
-
 # windows
 #                       border  bckgnd  text    indicat child border
 client.focused          #990099 #000000 #999999 #999999 #990099
@@ -17,74 +10,63 @@ client.urgent           #ff0000 #000000 #ffffff #ffffff #ff0000
 client.unfocused        #000000 #000000 #ffffff #ffffff #000000
 client.background #000000
 
-default_border pixel 2
-default_floating_border pixel 2
-smart_borders on
-#hide_edge_borders vertical
 
 # fonts
 font pango:monospace 8
 #font pango:DejaVu Sans Mono 8
 
-# xsecurelock
+# startup apps
 set $lock "env XSECURELOCK_SAVER=saver_blank xsecurelock"
 exec --no-startup-id xset s 300 5
 exec --no-startup-id xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock
-
-# base view
-exec --no-startup-id kitty -e zsh -c 'neofetch; zsh'
-
-# startup apps
 exec --no-startup-id 1password --silent
+# exec_always --no-startup-id autotiling
+exec --no-startup-id kitty -e ikhal
 
-# Pulse Audio
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+# audio
+bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 5%-
+bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_SINK@ toggle
 
-# Spotify Control
+# spotify control
 bindsym XF86AudioPlay exec --no-startup-id playerctl --player=spotify play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl --player=spotify next
 bindsym XF86AudioPrev exec --no-startup-id playerctl --player=spotify previous
 
+no_focus [title="^Peek preview$"]
+
+# const
+set $mod Mod4
+set $up k
+set $down j
+set $left h
+set $right l
+
 # emojis
 bindsym $mod+semicolon exec --no-startup-id emoji-picker
 
-# peek.nvim
-no_focus [title="^Peek preview$"]
-
-# maim screenshot
+# screenshot
 bindsym $mod+Print exec maim -s ~/Documents/Screenshots/screenshot-$(date +%Y-%m-%d-%H-%M-%S).png
 
-# use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# move tiling windows via drag & drop by left-clicking into the title bar,
-# or left-clicking anywhere into the window while holding the floating modifier.
-# tiling_drag modifier titlebar
-
-# quick launch
 bindsym $mod+Return exec kitty
 bindsym $mod+Shift+Return exec kitty -o background=#060006 ssh liams@risc-iv-monolith
 bindsym $mod+apostrophe exec brave
-bindsym $mod+s exec spotify
+bindsym $mod+s exec spotify-launcher
 bindsym $mod+i exec 1password
 bindsym $mod+r exec rnote
 bindsym $mod+c exec kitty -e zsh -c 'khal interactive'
 
-# quick background
 bindsym $mod+slash exec feh --fullscreen --hide-pointer --borderless ~/.config/wallpapers/macos_gradient.jpg --no-screen-clip --zoom 100
 
-# kill focused window
 bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
-# lock
 bindsym Ctrl+Mod1+Delete exec $lock
 
-# menu
 bindsym $mod+d exec --no-startup-id dmenu_run -nb '#000000' -sb '#222222'
 
-# change focus
 focus_wrapping no
 focus_follows_mouse no
 
@@ -97,7 +79,6 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# move focused window
 bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
@@ -107,35 +88,25 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split
 bindsym $mod+b split h
 bindsym $mod+v split v
 
-# fullscreen
 bindsym $mod+f fullscreen toggle
 
-# container layout
 # bindsym $mod+s layout stacking
 # bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-# change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
+# bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
-# scratchpad
-bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+minus scratchpad show
+# bindsym $mod+Shift+minus move scratchpad
+# bindsym $mod+minus scratchpad show
 
-# workspace keys
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -147,7 +118,6 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-# switch workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
 bindsym $mod+3 workspace number $ws3
@@ -159,7 +129,6 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
-# move to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
@@ -171,13 +140,6 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-# i3
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-msg exit && clear"
-
-# resize
-bindsym $mod+Shift+Ctrl+$left resize shrink width 40 px
-bindsym $mod+Shift+Ctrl+$down resize grow height 40 px
-bindsym $mod+Shift+Ctrl+$up resize shrink height 40 px
-bindsym $mod+Shift+Ctrl+$right resize grow width 40 px

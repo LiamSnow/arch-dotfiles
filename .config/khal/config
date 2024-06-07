@@ -3,12 +3,33 @@
 [[general]]
 path = /home/liams/.calendars/general/general/
 type = calendar
+color = "#000000"
 
 [[school]]
 path = /home/liams/.calendars/school/school/
 type = calendar
+color = "#fa8072"
+
+[[contacts]]
+path = /home/liams/.calendars/contacts/contacts/
+type = birthdays
+color = "#BEBEBE"
+
+[[canvas]]
+path = /home/liams/.calendars/canvas
+type = calendar
+readonly = True
+color = "#ffa500"
+
+[[holidays]]
+path = /home/liams/.calendars/holidays
+type = calendar
+readonly = True
+color = "#ee82ee"
+
 
 [locale]
+firstweekday = 6
 timeformat = %I:%M %p
 dateformat = %m/%d/%Y
 longdateformat = %m/%d/%Y
@@ -17,3 +38,11 @@ longdatetimeformat = %m/%d/%Y %I:%M %p
 
 [default]
 default_calendar = general
+highlight_event_days = True
+
+[highlight_days]
+multiple_on_overflow = True
+multiple = "#b2ec5d"
+
+[view]
+frame = top

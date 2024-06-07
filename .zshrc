@@ -64,7 +64,7 @@ export PATH
 
 # enviornment
 export EDITOR=nvim
-export BROWSER=brave-beta
+export BROWSER=brave
 
 # alias
 alias v='nvim'
@@ -81,7 +81,7 @@ alias sto='stow --dir=/home/liams/Sync/Arch --target=/home/liams .'
 alias pack='v ~/Sync/Arch/PACKAGES.md'
 alias setup='v ~/Sync/Arch/SETUP.md'
 alias shop='todo --config ~/.config/todoman/shopping.py'
-alias cal='khal interactive'
+alias cal='ikhal'
 
 # yazi
 function y() {
@@ -96,8 +96,13 @@ function y() {
 # pip alias (for virtual enviornments)
 alias pip='env/bin/pip'
 
-# 1password-cli
-eval "$(op completion zsh)"; compdef _op op
+eval "$(_KHAL_COMPLETE=zsh_source khal)"
 
 # To customize prompt, run `p10k configure` or edit ~/Sync/Arch/.p10k.zsh.
 [[ ! -f ~/Sync/Arch/.p10k.zsh ]] || source ~/Sync/Arch/.p10k.zsh
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/liams/.dart-cli-completion/zsh-config.zsh ]] && . /home/liams/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+

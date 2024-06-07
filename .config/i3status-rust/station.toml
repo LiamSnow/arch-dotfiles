@@ -34,7 +34,7 @@ format = "RISC-IV-BUDS"
 [[block]]
 block = "sound"
 format = "VOL {$volume.eng(w:2)|}"
-driver = "pulseaudio"
+driver = "auto"
 
 [[block]]
 block = "net"
