@@ -95,10 +95,17 @@ vs /etc/mkinitcpio.conf
 sudo mkinitcpio -P
 ```
 
-### GitHub Authentication
+### Git
 
 ```bash
 gh auth login
+```
+
+TODO Setup Yubikey Git commit signing
+```bash
+git config --global user.signingKey KEY
+git config --global commit.gpgsign true  #auto sign
+git config --global gpg.program gpg2
 ```
 
 
@@ -145,4 +152,3 @@ TODO gnome-keyring and polkit-gnome
 pamu2fcfg > ~/.config/Yubico/u2f_keys
 pamu2fcfg -n >> ~/.config/Yubico/u2f_keys
 ```
-

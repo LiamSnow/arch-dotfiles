@@ -7,5 +7,10 @@
 [user]
 	email = mail@liamsnow.com
 	name = LiamSnow
+	signingKey = 65BB1404DCB7CF97
 [init]
 	defaultBranch = main
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg2
