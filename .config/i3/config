@@ -4,12 +4,11 @@ include ~/.config/i3/`uname -n`.conf
 
 # windows
 #                       border  bckgnd  text    indicat child border
-client.focused          #990099 #000000 #999999 #999999 #990099
-client.focused_inactive #990099 #000000 #999999 #999999 #990099
-client.urgent           #ff0000 #000000 #ffffff #ffffff #ff0000
-client.unfocused        #000000 #000000 #ffffff #ffffff #000000
-client.background #000000
-
+client.focused          #990099 #000000 #999999 #999999 #99009977
+client.focused_inactive #990099 #000000 #999999 #999999 #99009977
+client.urgent           #ff0000 #000000 #ffffff #ffffff #ff000077
+client.unfocused        #000000 #000000 #ffffff #ffffff #ffffff00
+client.background #00000000
 
 # fonts
 font pango:monospace 8
@@ -22,16 +21,7 @@ exec --no-startup-id xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock
 exec --no-startup-id 1password --silent
 # exec_always --no-startup-id autotiling
 exec --no-startup-id kitty -e ikhal
-
-# audio
-bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 5%+
-bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 5%-
-bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_SINK@ toggle
-
-# spotify control
-bindsym XF86AudioPlay exec --no-startup-id playerctl --player=spotify play-pause
-bindsym XF86AudioNext exec --no-startup-id playerctl --player=spotify next
-bindsym XF86AudioPrev exec --no-startup-id playerctl --player=spotify previous
+exec "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 
 no_focus [title="^Peek preview$"]
 
@@ -41,6 +31,18 @@ set $up k
 set $down j
 set $left h
 set $right l
+
+# audio
+bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 5%+
+bindsym $mod+grave exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 5%-
+bindsym $mod+backslash exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 5%-
+bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_SINK@ toggle
+
+# spotify control
+bindsym $mod+0 exec --no-startup-id playerctl --player=spotify previous
+bindsym $mod+minus exec --no-startup-id playerctl --player=spotify play-pause
+bindsym $mod+equal exec --no-startup-id playerctl --player=spotify next
 
 # emojis
 bindsym $mod+semicolon exec --no-startup-id emoji-picker
@@ -64,6 +66,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+q kill
 
 bindsym Ctrl+Mod1+Delete exec $lock
+bindsym $mod+x exec $lock
 
 bindsym $mod+d exec --no-startup-id dmenu_run -nb '#000000' -sb '#222222'
 
@@ -116,7 +119,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
+# set $ws10 "10"
 
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -127,7 +130,7 @@ bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
+# bindsym $mod+0 workspace number $ws10
 
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
@@ -138,7 +141,7 @@ bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+# bindsym $mod+Shift+0 move container to workspace number $ws10
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart

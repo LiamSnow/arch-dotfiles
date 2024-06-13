@@ -152,3 +152,8 @@ TODO gnome-keyring and polkit-gnome
 pamu2fcfg > ~/.config/Yubico/u2f_keys
 pamu2fcfg -n >> ~/.config/Yubico/u2f_keys
 ```
+
+TODO SSH:
+```bash
+gpg-agent --daemon --enable-ssh-support --write-env-file ~/.gpg-agent-info
+```

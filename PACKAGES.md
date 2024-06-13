@@ -22,7 +22,7 @@ imagemagick mpv
 
 ## Source
 posix mesa
-ruby npm
+ruby npm rustup
 
 ## Network
 openresolv
@@ -60,6 +60,11 @@ AUR: 1password
 stow
 syncthing
 tailscale
+rnote
 AUR: brave
 AUR: spotify-launcher
 
+## Bluetooth
+bluez
+bluez-utils
+blueman

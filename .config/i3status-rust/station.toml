@@ -1,5 +1,14 @@
 [theme.overrides]
 separator = " │ "
+idle_bg = "#ffffff77"
+idle_fg = "#333333"
+good_bg = "#ffffff77"
+good_fg = "#333333"
+warning_bg = "#ffffff77"
+critical_bg = "#ffffff77"
+info_bg = "#ffffff77"
+alternating_tint_bg = "#00000000"
+separator_bg = "#ffffff77"
 
 [[block]]
 block = "temperature"
@@ -38,8 +47,7 @@ driver = "auto"
 
 [[block]]
 block = "net"
-device = "wlo1"
-format = "WIFI {$ssid $signal_strength $frequency DOWN $speed_down $graph_down UP $speed_up $graph_up |Wired connection}"
+format = "{WIFI $ssid $signal_strength $frequency DOWN $speed_down $graph_down UP $speed_up $graph_up |ETH DOWN $speed_down $graph_down UP $speed_up $graph_up}"
 
 [[block]]
 block = "time"

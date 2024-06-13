@@ -1,3 +1,11 @@
+# gpg
+export GPG_TTY="$(tty)"
+export PINENTRY_USER_DATA=USE_TTY=1
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+# echo UPDATESTARTUPTTY | gpg-connect-agent > /dev/null
+
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -58,6 +66,9 @@ setopt cdable_vars
 setopt prompt_subst
 setopt globdots
 
+# completions
+eval "$(_KHAL_COMPLETE=zsh_source khal)"
+
 # path
 path+=('/home/liams/.cargo/bin')
 export PATH
@@ -95,8 +106,6 @@ function y() {
 
 # pip alias (for virtual enviornments)
 alias pip='env/bin/pip'
-
-eval "$(_KHAL_COMPLETE=zsh_source khal)"
 
 # To customize prompt, run `p10k configure` or edit ~/Sync/Arch/.p10k.zsh.
 [[ ! -f ~/Sync/Arch/.p10k.zsh ]] || source ~/Sync/Arch/.p10k.zsh
