@@ -4,10 +4,10 @@ include ~/.config/i3/`uname -n`.conf
 
 # windows
 #                       border  bckgnd  text    indicat child border
-client.focused          #990099 #000000 #999999 #999999 #99009977
-client.focused_inactive #990099 #000000 #999999 #999999 #99009977
-client.urgent           #ff0000 #000000 #ffffff #ffffff #ff000077
-client.unfocused        #000000 #000000 #ffffff #ffffff #ffffff00
+client.focused          #990099 #000000 #999999 #999999 #990099
+client.focused_inactive #990099 #000000 #999999 #999999 #990099
+client.urgent           #ff0000 #000000 #ffffff #ffffff #ff0000
+client.unfocused        #000000 #000000 #ffffff #ffffff #00000099
 client.background #00000000
 
 # fonts
@@ -22,6 +22,9 @@ exec --no-startup-id 1password --silent
 # exec_always --no-startup-id autotiling
 exec --no-startup-id kitty -e ikhal
 exec "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+exec_always --no-startup-id picom  -b --config ~/.config/picom/picom.conf
+exec --no-startup-id feh --bg-scale ~/.wallpapers/macos_monterey.jpg
+
 
 no_focus [title="^Peek preview$"]
 
@@ -48,7 +51,7 @@ bindsym $mod+equal exec --no-startup-id playerctl --player=spotify next
 bindsym $mod+semicolon exec --no-startup-id emoji-picker
 
 # screenshot
-bindsym $mod+Print exec maim -s ~/Documents/Screenshots/screenshot-$(date +%Y-%m-%d-%H-%M-%S).png
+bindsym $mod+Print exec maim -s ~/Sync/Screenshots/screenshot-$(date +%Y-%m-%d-%H-%M-%S).png
 
 floating_modifier $mod
 

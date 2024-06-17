@@ -19,10 +19,14 @@ neofetch
 unzip
 openssh
 imagemagick mpv
+calc
 
-## Source
+## Other
 posix mesa
-ruby npm rustup
+ruby
+deno npm
+rustup
+dosfstools
 
 ## Network
 openresolv

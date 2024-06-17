@@ -1,5 +1,14 @@
 [theme.overrides]
 separator = " │ "
+idle_bg = "#ffffff77"
+idle_fg = "#333333"
+good_bg = "#ffffff77"
+good_fg = "#333333"
+warning_bg = "#ffffff77"
+critical_bg = "#ffffff77"
+info_bg = "#ffffff77"
+alternating_tint_bg = "#00000000"
+separator_bg = "#ffffff77"
 
 [[block]]
 block = "temperature"

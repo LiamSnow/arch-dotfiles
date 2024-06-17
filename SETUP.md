@@ -63,6 +63,8 @@ sudo rm -rf paru
 
 paru -S  # packages from PACKAGES.md
 chsh -s /bin/zsh
+
+setxkbmap -option caps:ctrl_modifier
 ```
 
 ### Syncthing
@@ -101,8 +103,8 @@ sudo mkinitcpio -P
 gh auth login
 ```
 
-TODO Setup Yubikey Git commit signing
 ```bash
+gpg --list-secret-keys --keyid-format LONG mail@liamsnow.com
 git config --global user.signingKey KEY
 git config --global commit.gpgsign true  #auto sign
 git config --global gpg.program gpg2

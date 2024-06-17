@@ -5,12 +5,12 @@
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
 [user]
-	email = mail@liamsnow.com
-	name = LiamSnow
+	email = mail@liamsnow
+	name = Liam Snow
 	signingKey = 65BB1404DCB7CF97
 [init]
 	defaultBranch = main
 [commit]
 	gpgsign = true
 [gpg]
-	program = gpg
+	program = gpg2

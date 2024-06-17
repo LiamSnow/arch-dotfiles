@@ -41,8 +41,10 @@ bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
-# fzf
+#
 eval "$(fzf --zsh)"
+eval "$(zoxide init zsh)"
+alias zi="__zoxide_zi"
 
 # history
 HISTFILE=~/.histfile
