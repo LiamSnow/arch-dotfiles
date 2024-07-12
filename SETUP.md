@@ -140,8 +140,8 @@ This should have been done by `archinstall` if you
 used it.
 
 ```bash
-paru -S pipewire pipewire-alsa wireplumber pipewire-pulse
-systemctl --user --now enable pipewire pipewire-pulse wireplumber
+paru -S pipewire pipewire-alsa pipewire-pulse pipewire-media-session
+systemctl --user --now enable pipewire pipewire-pulse pipewire-media-session
 ```
 
 ### Yubikey

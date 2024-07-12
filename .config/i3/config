@@ -24,6 +24,7 @@ exec --no-startup-id kitty -e ikhal
 exec "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 exec_always --no-startup-id picom  -b --config ~/.config/picom/picom.conf
 exec --no-startup-id feh --bg-scale ~/.wallpapers/macos_monterey.jpg
+exec --no-startup-id setxkbmap -option caps:ctrl_modifier
 
 
 no_focus [title="^Peek preview$"]
@@ -37,15 +38,18 @@ set $right l
 
 # audio
 bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 5%+
-bindsym $mod+grave exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 5%+
+bindsym $mod+Home exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 5%+
 bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 5%-
-bindsym $mod+backslash exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 5%-
+bindsym $mod+End exec --no-startup-id wpctl set-volume @DEFAULT_SINK@ 5%-
 bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_SINK@ toggle
 
 # spotify control
-bindsym $mod+0 exec --no-startup-id playerctl --player=spotify previous
-bindsym $mod+minus exec --no-startup-id playerctl --player=spotify play-pause
-bindsym $mod+equal exec --no-startup-id playerctl --player=spotify next
+bindsym $mod+Prior exec --no-startup-id playerctl --player=spotify previous
+bindsym XF86AudioPlay exec --no-startup-id playerctl --player=spotify play-pause
+bindsym $mod+equal exec --no-startup-id playerctl --player=spotify play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl --player=spotify next
+bindsym $mod+Next exec --no-startup-id playerctl --player=spotify next
+bindsym XF86AudioPrev exec --no-startup-id playerctl --player=spotify previous
 
 # emojis
 bindsym $mod+semicolon exec --no-startup-id emoji-picker

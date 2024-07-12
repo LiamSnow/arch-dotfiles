@@ -15,10 +15,6 @@ block = "temperature"
 format = "SYSTEM $average"
 
 [[block]]
-block = "nvidia_gpu"
-format = "GPU $utilization $memory $temperature $power"
-
-[[block]]
 block = "cpu"
 format = "CPU {$utilization $barchart $frequency}"
 
@@ -57,6 +53,10 @@ format = "WIFI {$ssid $signal_strength $frequency DOWN $speed_down $graph_down U
 [[block]]
 block = "battery"
 format = "BAT $percentage"
+full_format = "BAT $percentage"
+charging_format = "BAT $percentage"
+not_charging_format = "BAT $percentage"
+empty_format = "BAT $percentage"
 
 [[block]]
 block = "time"

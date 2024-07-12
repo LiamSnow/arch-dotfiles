@@ -1,12 +1,12 @@
 [credential "https://github.com"]
-	helper = 
+	helper =
 	helper = !/usr/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
+	helper =
 	helper = !/usr/bin/gh auth git-credential
 [user]
-	email = mail@liamsnow
-	name = Liam Snow
+	email = mail@liamsnow.com
+	name = LiamSnow
 	signingKey = 65BB1404DCB7CF97
 [init]
 	defaultBranch = main

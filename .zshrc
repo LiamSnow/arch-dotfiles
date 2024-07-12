@@ -82,7 +82,6 @@ export BROWSER=brave
 # alias
 alias v='nvim'
 alias vs='sudoedit'
-alias y='yazi'
 alias sc='sudo systemctl'
 alias s='y ~/Sync/'
 alias a='y ~/Sync/Arch'
