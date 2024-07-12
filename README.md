@@ -28,8 +28,9 @@ package managers.
 
 ## Setup
 
-Xorg + I3
-(waiting for NVIDIA 560 drivers to use Wayland + Hyprland)
+Xorg + I3 (no desktop manager)
+
+(Currently waiting for NVIDIA 560 drivers to use Wayland + Hyprland)
 
 ### Desktop [I3](.config/i3) with [I3Status-Rust](.config/i3status-rust) and [Picom](.config/picom)
 
@@ -41,28 +42,15 @@ Xorg + I3
 
 ### Editor [Neovim](https://github.com/LiamSnow/nvim-config)
 
-See README in [nvim-config](https://github.com/LiamSnow/nvim-config) repo.
+- See [nvim-config](https://github.com/LiamSnow/nvim-config)
 
 ### CalDAV [khal](.config/khal) and [todoman](.config/todoman)
 
-I run Radicale CalDAV on my home server that syncs files to
-`.calendars` (via `vdirsyncer` which allows khal and todoman
-to view/edit them) over my Tailnet.
-This allows me to sync contacts, reminders, and my calendars
-between my computers and iPhone.
-
-Todoman is nice lightweight CLI tool
-that lets me easily view and edit my reminders. Nothing
-too special, but basically exactly what I needed.
-
-Khal is an awesome CLI/TUI tool for working with my
-calendars. It has
-an interactive/TUI mode to use a calendar just like
-any other but with a keyboard forward design. But the
-best part is the CLI tool. I can easily search through
-all my events, list events for a certain timespan, and
-more. Khal has made me love using my calendar, which
-means I use it a lot more.
+- My `.calendar` folder is synced to my home server which is synced to my CalDAV server (via vdirsyncer). This means I can use my contacts, reminders, and my calendars between my computers and phone.
+- Todoman is a lightweight CLI tools for working with reminders/todos
+- Khal is a CLI/TUI tool for working with my calendars.
+  - Interactive (TUI) mode allows for regular calendar use (but with keybinds)
+  - The CLI tools allows searching for events, listing events between a timespan, and more. This is awesome feature that comes in handy more than you would think.
 
 ### Terminal [kitty](.config/kitty) and [Zsh](.zshrc)
 
@@ -72,7 +60,7 @@ means I use it a lot more.
 
 ### File Explorer [yazi](.config/yazi)
 
-After using yazi I could not imagine
-going back to a GUI file explorer, its the best thing ever.
-(Similar to ranger, but written in the best language)
+- TUI file explorer written in Rust (similar to Ranger)
+- Its fast and has good Vim-like keybinds
+- I could not imagine going back to a GUI file explorer
 
