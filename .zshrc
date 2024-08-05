@@ -83,16 +83,21 @@ export BROWSER=brave
 alias v='nvim'
 alias vs='sudoedit'
 alias sc='sudo systemctl'
+alias ls='lsd'
+alias hg='history 0 | rg'
+alias sto='stow --dir=/home/liams/Sync/Arch --target=/home/liams .'
+
 alias s='y ~/Sync/'
 alias a='y ~/Sync/Arch'
-alias hg='history 0 | rg'
-alias ls='lsd'
-alias nvc='v ~/.config/nvim'
-alias zshrc='v ~/.zshrc'
-alias sto='stow --dir=/home/liams/Sync/Arch --target=/home/liams .'
 alias pack='v ~/Sync/Arch/PACKAGES.md'
 alias setup='v ~/Sync/Arch/SETUP.md'
-alias shop='todo --config ~/.config/todoman/shopping.py'
+alias c='y ~/Sync/Code'
+alias d='y ~/Downloads'
+alias nvc='v ~/.config/nvim'
+alias rc='v ~/.zshrc'
+
+alias t='todo'
+alias shop='t --config ~/.config/todoman/shopping.py'
 alias cal='ikhal'
 
 # yazi

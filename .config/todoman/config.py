@@ -6,5 +6,6 @@ time_format = "%H:%M"
 default_list = "General"
 default_due = 0
 humanize = True
-default_command = "list --priority medium"
+default_command = "list"
+# default_command = "list --priority medium"
 default_priority = 5

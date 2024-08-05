@@ -44,7 +44,7 @@ playerctl
 
 ## Fonts
 noto-fonts-emoji
-AUR: ttf-ibmplex-mono-nerd
+ttf-jetbrains-mono-nerd
 
 ## Python
 python python-pynvim  python-openai
