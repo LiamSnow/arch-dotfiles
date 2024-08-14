@@ -28,17 +28,7 @@ package managers.
 
 ## Setup
 
-Xorg + I3 (no desktop manager)
-
-(Currently waiting for NVIDIA 560 drivers to use Wayland + Hyprland)
-
-### Desktop [I3](.config/i3) with [I3Status-Rust](.config/i3status-rust) and [Picom](.config/picom)
-
-- MacOS aesthetic with transparent blurred terminals
-- Separate customization for Desktop & Laptop
-- Audio controls, screenshot tool, emoji picker
-- xsecurelock for locking (works with my Yubikey PAM auth)
-- Vim keybinds + other modifications
+Hyprland (Wayland) - No Desktop Manager
 
 ### Editor [Neovim](https://github.com/LiamSnow/nvim-config)
 

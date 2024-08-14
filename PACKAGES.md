@@ -1,15 +1,18 @@
-## Xorg
-xorg-server xorg-xinit
-i3-wm i3status-rust dmenu
-xsecurelock xss-lock
-maim
-xclip
-XX Desktop Only: picom
-AUR: x11-emoji-picker-git
+## Nvidia
+nvidia-beta-dkms
+nvidia-utils-beta lib32-nvidia-utils-beta
+egl-wayland libvdpau libva-nvidia-driver-git
+
+## Wayland
+hyprland hyprpaper hyprpicker hypridle hyprlock xdg-desktop-portal-hyprland
+mako
+wl-clipboard
+waybar wttrbar
+gammastep
 
 ## Terminal
 zsh
-AUR: zinit-git
+zinit-git
 kitty
 neovim tree-sitter-cli
 git github-cli
@@ -20,6 +23,7 @@ unzip
 openssh
 imagemagick mpv
 calc
+bat
 
 ## Other
 posix mesa
@@ -47,8 +51,9 @@ noto-fonts-emoji
 ttf-jetbrains-mono-nerd
 
 ## Python
-python python-pynvim  python-openai
-AUR: python-anthropic
+python
+python-pynvim
+python-openai python-anthropic
 
 ## CalDAV
 khal
@@ -58,15 +63,15 @@ todoman
 yubikey-manager (enable pcscd)
 pam-u2f
 polkit-gnome gnome-keyring
-AUR: 1password
+1password
 
 ## Apps
 stow
 syncthing
 tailscale
 rnote
-AUR: brave
-AUR: spotify-launcher
+firefox firefox-dark-reader firefox-decentraleyes firefox-tridactyl firefox-ublock-origin firefox-tridactly-native
+spotify
 
 ## Bluetooth
 bluez

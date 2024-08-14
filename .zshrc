@@ -77,7 +77,7 @@ export PATH
 
 # enviornment
 export EDITOR=nvim
-export BROWSER=brave
+export BROWSER=firefox
 
 # alias
 alias v='nvim'
