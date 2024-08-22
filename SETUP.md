@@ -20,7 +20,7 @@ quit
 1. Verify: `ping cloudflare.com`
 
 ### Installer
-#plzdontcallmeasoydev
+\#plzdontcallmeasoydev
 
 Alternatives see [Manual Instructions](SETUP_MANUAL.md)
 

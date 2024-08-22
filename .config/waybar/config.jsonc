@@ -17,12 +17,16 @@
     "custom/gpu-usage",
     "temperature",
     "systemd-failed-units",
+    "custom/pacman",
     "privacy"
   ],
   "modules-center": [
     "hyprland/workspaces"
   ],
   "modules-right": [
+    "custom/menu",
+    // "tray",
+    "custom/swaync",
     "mpris",
     "custom/events",
     "custom/weather",

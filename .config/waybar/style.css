@@ -3,7 +3,6 @@
   font-weight: bold;
   min-height: 0;
   font-size: 97%;
-  color: #eaeaea;
 }
 
 window#waybar {
@@ -34,10 +33,11 @@ window#waybar {
   transition: width 2s ease;
 }
 
-.modules-right,
-.modules-left {
+.modules-left,
+.modules-right {
   padding-left: 15px;
   padding-right: 15px;
+  color: #eaeaea;
 }
 
 .modules-right,
@@ -48,4 +48,22 @@ window#waybar {
 .modules-left,
 .modules-center {
   border-bottom-right-radius: 10px;
+}
+
+#workspaces button {
+  color: #eaeaea;
+}
+
+#workspaces button.active {
+  border: 2px solid #ff33cc;
+  border-radius: 8px;
+  color: #ff33cc;
+}
+
+#workspaces button.urgent {
+  background-color: #ff0000;
+}
+
+#temperature.critical {
+  background-color: #ff0000;
 }
