@@ -1,8 +1,4 @@
-/**
- * ROFI Color theme
- * User: Qball
- * Copyright: Dave Davenport
- */
+// vim: filetype=rasi
 
 * {
     background:     #15161EFF;
@@ -20,12 +16,13 @@
 }
 
 window {
-  border: 0px;
+  border: 5px;
+  border-color: #cc33ffee;
   padding: 1em;
   border-radius: 30px;
   fullscreen:                  false;
-    transparency:                "real";
-    cursor:                      "default";
+  transparency:                "real";
+  cursor:                      "default";
   width:  30%;
   background-color: black / 30%;
 }
@@ -34,9 +31,9 @@ mainbox {
   spacing: 0px;
   children: [inputbar,listview];
   background-color:            transparent;
-    spacing:                     10px;
-    margin:                      0px;
-    padding:                     10px 10px;
+  spacing:                     10px;
+  margin:                      0px;
+  padding:                     10px 10px;
 }
 
 inputbar {

@@ -6,13 +6,12 @@ egl-wayland libvdpau libva-nvidia-driver-git
 ## Wayland
 hyprland hyprpaper hyprpicker hypridle hyprlock xdg-desktop-portal-hyprland
 swaync
-rofi-wayland rofimoji
+rofi-wayland rofimoji wtype
 wl-clipboard
 waybar wttrbar
 gammastep
 hyprshot satty
 ianny
-fcitx5-im-emoji-picker-git fcitx5
 
 ## Terminal
 zsh

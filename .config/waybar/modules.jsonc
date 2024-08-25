@@ -47,6 +47,9 @@
   "wireplumber": {
     "format": "<span color='#ff33cc'>VOL</span> {volume}%"
   },
+  "battery": {
+    "format": "<span color='#ff33cc'>BAT</span> {capacity}%"
+  },
   "cpu": {
     "format": "<span color='#ff33cc'>CPU</span> {usage}%"
   },

@@ -3,7 +3,12 @@
 env = XCURSOR_SIZE,24
 env = HYPRCURSOR_SIZE,24
 
+env = NVD_BACKEND,direct
+
+env = LIBVA_DRIVER_NAME,nvidia
 env = XDG_SESSION_TYPE,wayland
+env = GBM_BACKEND,nvidia-drm
+env = __GLX_VENDOR_LIBRARY_NAME,nvidia
 
 env = ELECTRON_OZONE_PLATFORM_HINT,wayland
 env = GDK_BACKEND,wayland
@@ -19,7 +24,15 @@ env = QT_WAYLAND_DISABLE_WINDOWDECORATION,1
 env = QT_QPA_PLATFORMTHEME,qt5ct
 
 env = MOZ_DISABLE_RDD_SANDBOX,1
+env = __EGL_VENDOR_LIBRARY_FILENAMES,/usr/share/glvnd/egl_vendor.d/10_nvidia.json
+
+env = GTK_IM_MODULE,wayland
+env = QT_IM_MODULE,fcitx
+env = MODIFIERS,@im=fcitx
+
+env = AQ_DRM_DEVICES,/dev/dri/card0
 
 cursor {
   no_hardware_cursors = true
 }
+
