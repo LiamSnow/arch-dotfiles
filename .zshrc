@@ -78,6 +78,7 @@ export PATH
 # enviornment
 export EDITOR=nvim
 export BROWSER=firefox
+export HOSTNAME=$(uname -n)
 
 # alias
 alias v='nvim'

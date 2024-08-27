@@ -1,0 +1,7 @@
+// vim: filetype=rasi
+
+@import "calc.rasi"
+
+window {
+  width: 30%;
+}

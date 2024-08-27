@@ -55,9 +55,9 @@ window#waybar {
 }
 
 #workspaces button.active {
-  border: 2px solid #ff33cc;
+  border: 2px solid #33ffcc;
   border-radius: 8px;
-  color: #ff33cc;
+  color: #33ffcc;
 }
 
 #workspaces button.urgent {

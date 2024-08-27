@@ -4,9 +4,10 @@ nvidia-utils-beta lib32-nvidia-utils-beta
 egl-wayland libvdpau libva-nvidia-driver-git
 
 ## Wayland
-hyprland hyprpaper hyprpicker hypridle hyprlock xdg-desktop-portal-hyprland
+hyprland hyprpaper hyprpicker xdg-desktop-portal-hyprland
+swaylock swayidle
 swaync
-rofi-wayland rofimoji wtype
+rofi-wayland rofimoji wtype rofi-calc-git
 wl-clipboard
 waybar wttrbar
 gammastep

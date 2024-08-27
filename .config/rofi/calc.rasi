@@ -23,7 +23,7 @@ window {
   fullscreen:                  false;
   transparency:                "real";
   cursor:                      "default";
-  width:  30%;
+  height: 50%;
   background-color: black / 30%;
 }
 
@@ -54,15 +54,6 @@ entry {
 listview {
   border: 0px;
   cursor:                      "default";
-    columns:                     6;
-    lines:                       4;
-    cycle:                       true;
-    dynamic:                     true;
-    scrollbar:                   false;
-    layout:                      vertical;
-    reverse:                     false;
-    fixed-height:                true;
-    fixed-columns:               true;
 
     background-color:            transparent;
     text-color:                  @text;
@@ -74,16 +65,15 @@ listview {
 
 element {
   background: transparent;
-  children: [ element-icon, element-text ];
+  children: [ element-text ];
     cursor:                      pointer;
     border-radius:               24px;
     background-color:            transparent;
     text-color:                  @text;
     orientation:                 vertical;
 
-    spacing:                     16px;
     margin:                      0px;
-    padding:                     36px 0px;
+    padding:                     12px 0px;
 }
 element,element-text,element-icon, button {
     cursor: pointer;
@@ -108,12 +98,6 @@ element-text {
     highlight:                   inherit;
     cursor:                      inherit;
     padding: 0 20px;
-}
-element-icon {
-    background-color:            transparent;
-    text-color:                  inherit;
-    size:                        72px;
-    cursor:                      inherit;
 }
 
 element  selected {
