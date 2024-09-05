@@ -12,20 +12,21 @@ wl-clipboard
 waybar wttrbar
 gammastep
 hyprshot satty
+hyprcursor bibata-cursor-theme-bin
 ianny
 
 ## Terminal
 zsh
 zinit-git
 kitty
-neovim tree-sitter-cli
+neovim tree-sitter-cli libwpe webkit2gtk wpebackend-fdo
 git github-cli
 lsd
 yazi ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf zoxide
 neofetch
 unzip
 openssh
-imagemagick mpv
+mpv
 calc
 bat
 

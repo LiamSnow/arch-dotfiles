@@ -1,160 +1,120 @@
 // vim: filetype=rasi
 
+configuration {
+    modi:                         "drun,calc";
+    show-icons:                 true;
+    display-calc:               " ";
+    display-drun:               " ";
+  	drun-display-format:        "{name}";
+    font:                        "JetBrains Mono Nerd Font 16";
+}
+
 * {
-    background:     #15161EFF;
-    background-alt: #1A1B26FF;
-    foreground:     #C0CAF5FF;
-    selected:       #33467CFF;
-    active:         #414868FF;
-    urgent:         #F7768EFF;
-    text-selected:               @background;
-    text:                        @foreground;
-
-    shade-shadow:                white / 6%;
-    shade-bg:                    white / 12%;
-    shade-border:                white / 24%;
+    background: black / 40%;
+    border: #00000099;
+    text: #eeeeee;
+    background-color: transparent;
+    border-color: @border;
+    text-color: @text;
+    anchor: north;
+    location: center;
 }
-
 window {
-  border: 5px;
-  border-color: #cc33ffee;
-  padding: 1em;
-  border-radius: 30px;
-  fullscreen:                  false;
-  transparency:                "real";
-  cursor:                      "default";
-  background-color: black / 30%;
+    transparency: "real";
+    background-color: transparent;
+    border: 0;
+    padding: 0% 0% 1em 0%;
+    x-offset: 0;
+    y-offset: -10%;
 }
-
 mainbox {
-  spacing: 0px;
-  children: [inputbar,listview];
-  background-color:            transparent;
-  spacing:                     10px;
-  margin:                      0px;
-  padding:                     10px 10px;
+    padding: 0px;
+    border: 0;
+    spacing: 0;
 }
-
-inputbar {
-  margin: 0px 0px 0.5em 0em;
-  spacing: 0.4em;
-  border-radius:               12px;
-  background-color:            @shade-bg;
-  padding:                     14px;
-  children: [ entry ];
-}
-
-entry {
-    placeholder: "Search";
-    placeholder-color: white/20%;
-    text-color: white/100%;
-}
-
-listview {
-  border: 0px;
-  cursor:                      "default";
-    columns:                     6;
-    lines:                       4;
-    cycle:                       true;
-    dynamic:                     true;
-    scrollbar:                   false;
-    layout:                      vertical;
-    reverse:                     false;
-    fixed-height:                true;
-    fixed-columns:               true;
-
-    background-color:            transparent;
-    text-color:                  @text;
-
-    spacing:                     0px;
-    margin:                      0px;
-    padding:                     0px;
-}
-
-element {
-  background: transparent;
-  children: [ element-icon, element-text ];
-    cursor:                      pointer;
-    border-radius:               24px;
-    background-color:            transparent;
-    text-color:                  @text;
-    orientation:                 vertical;
-
-    spacing:                     16px;
-    margin:                      0px;
-    padding:                     36px 0px;
-}
-element,element-text,element-icon, button {
-    cursor: pointer;
-}
-
-element normal.normal,
-element alternate.normal {
-    background-color:            transparent;
-    text-color:                  @text;
-}
-
-element selected.normal {
-    background-color:            @shade-bg;
-    text-color:                  white;
-    border:                      1px solid;
-    border-color:                @selected;
-}
-
-element-text {
-    background-color:            transparent;
-    text-color:                  inherit;
-    highlight:                   inherit;
-    cursor:                      inherit;
-    padding: 0 20px;
-}
-element-icon {
-    background-color:            transparent;
-    text-color:                  inherit;
-    size:                        72px;
-    cursor:                      inherit;
-}
-
-element  selected {
-  border-color: #cc33ff;
-  border:       2px;
-  border-radius: 10px;
-  background-color: white/20%;
-}
-
-element-text, element-icon {
-  font:             inherit;
-  horizontal-align: 0.5;
-}
-
-/* Scrollbar ---------------------------------------------------- */
-scrollbar {
-    margin:                      0px 4px;
-    handle-width:                8px;
-    handle-color:                white;
-    background-color:            @shade-shadow;
-    border-radius:               4px;
-}
-
-/* Message ------------------------------------------------------ */
 message {
-    background-color:            @shade-bg;
-    border:                      1px solid;
-    border-color:                transparent;
-    border-radius:               12px;
-    padding:                     24px;
+    border: 0px;
+    border-color: @border;
+    padding: 0.7em;
+    background-color: @background;
+    text-color: @text;
+    foreground-color: @text;
+    border-radius: 20px;
+}
+textbox normal {
+    text-color: @text;
+    padding: 0;
+    border: 0;
+}
+listview {
+    border: 0px;
+    border-radius: 20px;
+    border-color: @border;
+    padding: 0.4em 0.4em 0 0.4em;
+    reverse: false;
+    columns: 1;
+    background-color: @background;
+    scrollbar: false;
+    margin: 12px 0 0 0;
+}
+element {
+    border: 0;
+    padding: 10px;
+    margin: 0 0 5px 0;
+    highlight: bold;
+    children: [element-icon, element-text];
+    text-color: @text;
+    background-color: transparent;
+    border-radius: 14px;
+}
+element-text {
+}
+element selected.normal {
+    text-color: @text;
+    background-color: white / 15%;
+}
+element alternate.normal, element normal.normal {
+    text-color: @text;
+    background-color: transparent;
+}
+scrollbar {
+    border: 0;
+    padding: 0;
+}
+inputbar {
+    margin: 0;
+    spacing: 0;
+    border: 0px;
+    padding: 0.7em 1em;
+    border-radius: 20px;
+    background-color: @background;
+    index: 0;
+    children:   [ prompt,entry,case-indicator ];
+}
+inputbar normal {
+    foreground-color: @text;
+    background-color: transparent;
+}
+mode-switcher {
+    padding: 0.5em 1em;
+    background-color: @background;
+    index: 10;
+}
+button selected {
+    text-color: #4271AEFF;
+}
+prompt {
+  text-color: @text;
+  margin: 0 10px 0 0;
+}
+entry {
+  text-color: @text;
+  placeholder: "Search";
+  placeholder-color: white/20%;
 }
 error-message {
-    padding:                     100px;
-    border:                      0px solid;
-    border-radius:               0px;
-    background-color:            black / 10%;
-    text-color:                  @text;
-}
-textbox {
-    background-color:            transparent;
-    text-color:                  @text;
-    vertical-align:              0.5;
-    horizontal-align:            0.5;
-    highlight:                   none;
+    border: 0px;
+    padding: 1em;
+    background-color: @background;
+    text-color: @text;
 }

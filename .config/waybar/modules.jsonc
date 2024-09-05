@@ -18,7 +18,7 @@
   },
   "custom/gpu-usage": {
     "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
-    "format": "<span color='#ff33cc'>GPU</span> {}%",
+    "format": "󰢮 {}%",
     "return-type": "",
     "interval": 1
   },
@@ -45,19 +45,24 @@
     "tooltip-format": "<tt><small>{calendar}</small></tt>"
   },
   "wireplumber": {
-    "format": "<span color='#ff33cc'>VOL</span> {volume}%"
+    "format": "  {volume}%",
+    "format-muted": "󰝟"
   },
   "battery": {
-    "format": "<span color='#ff33cc'>BAT</span> {capacity}%"
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "tooltip-format": "{time}\n{power}",
+    "format-icons": ["󱊡", "󱊢", "󱊣"]
   },
   "cpu": {
-    "format": "<span color='#ff33cc'>CPU</span> {usage}%"
+    "format": "  {usage}%"
   },
   "memory": {
-    "format": "<span color='#ff33cc'>RAM</span> {used}GB"
+    "format": "  {used}GB"
   },
   "temperature": {
-    "format": "<span color='#ff33cc'>TEMP</span> {temperatureF}°F"
+    "format": "{icon} {temperatureF}°F",
+    "format-icons": ["","","","",""]
   },
   "systemd-failed-units": {
     "format": "<span color='red'>SYSTEMD {nr_failed} FAILED</span>"

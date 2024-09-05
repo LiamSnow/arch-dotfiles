@@ -90,6 +90,8 @@ alias sto='stow --dir=/home/liams/Sync/Arch --target=/home/liams .'
 alias bri='sudo ddcutil setvcp 10'
 
 alias s='y ~/Sync/'
+alias sc='y ~/Sync/School'
+alias cw='y ~/Sync/Classwork'
 alias a='y ~/Sync/Arch'
 alias pack='v ~/Sync/Arch/PACKAGES.md'
 alias setup='v ~/Sync/Arch/SETUP.md'
@@ -101,6 +103,7 @@ alias gp='nvim -c "PyGPTNew"'
 
 alias t='todo'
 alias shop='t --config ~/.config/todoman/shopping.py'
+alias ts='t --config ~/.config/todoman/school.py'
 alias cal='ikhal'
 
 # yazi
