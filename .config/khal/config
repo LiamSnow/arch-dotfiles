@@ -3,7 +3,7 @@
 [[general]]
 path = /home/liams/.calendars/general/general/
 type = calendar
-color = "#000000"
+color = "#ffffff"
 
 [[school]]
 path = /home/liams/.calendars/school/school/

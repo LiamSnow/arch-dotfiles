@@ -25,6 +25,7 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
+# zinit ice depth=1; zinit light jeffreytse/zsh-vi-mode
 
 # snippets
 zinit snippet OMZP::git
@@ -38,8 +39,9 @@ zinit cdreplay -q
 
 # keybindings
 bindkey -e
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
+KEYTIMEOUT=1
+# bindkey '^p' history-search-backward
+# bindkey '^n' history-search-forward
 
 #
 eval "$(fzf --zsh)"
@@ -78,19 +80,21 @@ export PATH
 # enviornment
 export EDITOR=nvim
 export BROWSER=firefox
+alias pdf='evince'
 export HOSTNAME=$(uname -n)
 
 # alias
 alias v='nvim'
+alias vh='nvim .'
 alias vs='sudoedit'
 alias sc='sudo systemctl'
 alias ls='lsd'
 alias hg='history 0 | rg'
 alias sto='stow --dir=/home/liams/Sync/Arch --target=/home/liams .'
-alias bri='sudo ddcutil setvcp 10'
+alias bri='ddcutil setvcp 10'
 
 alias s='y ~/Sync/'
-alias sc='y ~/Sync/School'
+alias sch='y ~/Sync/School'
 alias cw='y ~/Sync/Classwork'
 alias a='y ~/Sync/Arch'
 alias pack='v ~/Sync/Arch/PACKAGES.md'

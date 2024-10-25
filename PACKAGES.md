@@ -20,6 +20,7 @@ zsh
 zinit-git
 kitty
 neovim tree-sitter-cli libwpe webkit2gtk wpebackend-fdo
+typst typst-lsp min-browser-bin
 git github-cli
 lsd
 yazi ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf zoxide
@@ -29,6 +30,7 @@ openssh
 mpv
 calc
 bat
+lnav
 
 ## Other
 posix mesa
@@ -54,6 +56,8 @@ playerctl
 ## Fonts
 noto-fonts-emoji
 ttf-jetbrains-mono-nerd
+ttf-nerd-fonts-symbols
+ttf-nerd-fonts-symbols-common
 
 ## Python
 python
@@ -77,6 +81,7 @@ tailscale
 rnote
 firefox firefox-dark-reader firefox-decentraleyes firefox-tridactyl firefox-ublock-origin firefox-tridactly-native
 spotify
+evince
 
 ## Bluetooth
 bluez
