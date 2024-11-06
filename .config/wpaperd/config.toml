@@ -1,0 +1,5 @@
+[default]
+duration = "30m"
+mode = "center"
+sorting = "random"
+path = "/home/liams/.wallpapers"

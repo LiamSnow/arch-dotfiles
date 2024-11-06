@@ -159,3 +159,6 @@ TODO SSH:
 ```bash
 gpg-agent --daemon --enable-ssh-support --write-env-file ~/.gpg-agent-info
 ```
+
+### Auto Login
+https://wiki.archlinux.org/title/Getty#Automatic_login_to_virtual_console
