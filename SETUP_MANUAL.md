@@ -82,7 +82,7 @@ TODO Switch to Systemd-Boot
 blkid >> /etc/default/grub
 nvim /etc/default/grub
 # Remove all from `blkid` but copy UUID of `crypto_LUKS` and UUID of decrypted root partition `btrfs` and put below
-# GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet cryptdevice=UUID=XXX:cryptlvm root=UUID=XXX"
+# GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 cryptdevice=UUID=XXX:cryptlvm root=UUID=XXX"
 # GRUB_CMDLINE_LINUX=""
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg

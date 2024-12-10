@@ -9,22 +9,21 @@ swaylock swayidle
 swaync
 rofi-wayland rofimoji wtype rofi-calc-git
 wl-clipboard
-waybar wttrbar
+waybar
 gammastep
 hyprshot satty
 hyprcursor bibata-cursor-theme-bin
-ianny
 wpaperd
 
 ## Terminal
 zsh
 zinit-git
 kitty
-neovim tree-sitter-cli libwpe webkit2gtk wpebackend-fdo
-typst typst-lsp min-browser-bin
+neovim tree-sitter-cli libwpe webkit2gtk wpebackend-fdo yq
+typst typst-lsp min-browser-bin typstyle tinymist
 git github-cli
 lsd
-yazi ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf zoxide
+yazi ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf zoxide p7zip
 neofetch
 unzip
 openssh

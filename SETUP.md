@@ -132,7 +132,7 @@ sudo ptop  # enable recommended
 
 ### Microcode
 
-TOOD
+TODO
 
 ### Pipewire
 
