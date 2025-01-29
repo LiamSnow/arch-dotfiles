@@ -4,16 +4,17 @@ nvidia-utils-beta lib32-nvidia-utils-beta
 egl-wayland libvdpau libva-nvidia-driver-git
 
 ## Wayland
-hyprland hyprpicker xdg-desktop-portal-hyprland
-swaylock swayidle
-swaync
-rofi-wayland rofimoji wtype rofi-calc-git
-wl-clipboard
-waybar
-gammastep
+hyprland hyprpicker
 hyprshot satty
 hyprcursor bibata-cursor-theme-bin
-wpaperd
+swaylock swayidle
+<!-- swaync -->
+<!-- rofi-wayland rofimoji wtype rofi-calc-git -->
+bemenu j4-dmenu-desktop wtype
+wl-clipboard
+hybrid-bar
+gammastep
+xdg-desktop-portal-hyprland-git xdg-desktop-portal-gtk xdg-desktop-portal-wlr
 
 ## Terminal
 zsh

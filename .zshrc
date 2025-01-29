@@ -38,7 +38,9 @@ autoload -U compinit && compinit
 zinit cdreplay -q
 
 # keybindings
-bindkey -e
+bindkey -v
+bindkey '^F' autosuggest-accept
+bindkey '^[f' forward-word
 KEYTIMEOUT=1
 # bindkey '^p' history-search-backward
 # bindkey '^n' history-search-forward
@@ -94,7 +96,7 @@ alias gs='git status'
 alias hg='history 0 | rg'
 alias sto='stow --dir=/home/liams/Sync/Arch --target=/home/liams .'
 alias bri='ddcutil setvcp 10'
-alias gn='ddcutil setvcp d6 4 && shutdown now'
+alias gn='home crib off && ddcutil setvcp d6 4 && shutdown now'
 en() {
     sudo tailscale set --exit-node="$1"
 }
@@ -109,12 +111,24 @@ alias c='cd ~/Sync/Code'
 alias d='cd ~/Downloads'
 alias nvc='cd ~/.config/nvim'
 alias hyp='cd ~/.config/hypr'
-alias gp='v -c "PyGPTNew"'
+alias gpd='v -c "PyGPTNew deepseek"'
+alias gpp='v -c "PyGPTNew perplexity"'
+alias gpo='v -c "PyGPTNew openai"'
+alias gpa='v -c "PyGPTNew anthropic"'
 
 alias t='todo'
 alias shop='t --config ~/.config/todoman/shopping.py'
 alias ts='t --config ~/.config/todoman/school.py'
 alias cal='ikhal'
+
+alias f1='talosctl -n 192.168.5.101 -e 192.168.5.101'
+alias f2='talosctl -n 192.168.5.102 -e 192.168.5.102'
+alias f3='talosctl -n 192.168.5.103 -e 192.168.5.101'
+alias fa='talosctl -n 192.168.5.101,192.168.5.102,192.168.5.103 -e 192.168.5.101'
+alias kc='kubectl'
+alias kcg='kubectl get'
+alias kcl='kubectl logs'
+alias kcd='kubectl delete'
 
 # yazi
 function y() {

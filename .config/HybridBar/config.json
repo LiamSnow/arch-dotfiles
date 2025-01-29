@@ -2,7 +2,7 @@
     "hybrid": {
         "namespace": "hybrid-bar",
         "position": "Top",
-        "stylesheet": "style.css",
+        "stylesheet": "themes/current.css",
         "expand_left": true,
         "expand_right": true,
         "r": 17,

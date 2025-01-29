@@ -32,3 +32,4 @@ fi
 
 exec i3
 
+setxkbmap -option "ctrl:swapcaps"

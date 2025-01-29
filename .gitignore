@@ -1,8 +1,6 @@
-/.anthropic
-/.openai
 /.cache/
 /arch-priv/
 /Cheat/
+/.models
 /.calendars/
 /.calendars_link/
-/.liamsnow.asc

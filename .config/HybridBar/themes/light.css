@@ -1,0 +1,17 @@
+#root {
+    font-family: "SF Pro Display", serif;
+    font-size: 14px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    background: white;
+    color: black;
+}
+
+label {
+    color: black;
+}
+
+#workspace {
+    font-weight: 600;
+    font-size: 16px;
+}
