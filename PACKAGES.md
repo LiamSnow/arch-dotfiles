@@ -10,7 +10,7 @@ hyprcursor bibata-cursor-theme-bin
 swaylock swayidle
 <!-- swaync -->
 <!-- rofi-wayland rofimoji wtype rofi-calc-git -->
-bemenu j4-dmenu-desktop wtype
+bemenu j4-dmenu-desktop bemoji wtype
 wl-clipboard
 hybrid-bar
 gammastep
@@ -80,7 +80,8 @@ stow
 syncthing
 tailscale
 rnote
-firefox firefox-dark-reader firefox-decentraleyes firefox-tridactyl firefox-ublock-origin firefox-tridactly-native
+<!-- firefox firefox-dark-reader firefox-decentraleyes firefox-tridactyl firefox-ublock-origin firefox-tridactly-native -->
+zen-browser-bin firefox-tridactyl-native
 spotify
 evince
 

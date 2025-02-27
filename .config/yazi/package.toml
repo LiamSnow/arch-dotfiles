@@ -1,5 +1,12 @@
-[plugin]
-deps = [{ use = "dedukun/relative-motions", rev = "0d9c8cf" }, { use = "yazi-rs/plugins:full-border", rev = "02d18be" }]
+[[plugin.deps]]
+use = "dedukun/relative-motions"
+rev = "0d9c8cf"
+hash = "561ad872c77b95360c2657c5e8d395ed"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "02d18be"
+hash = "882ed23839778f82dc137248979c8681"
 
 [flavor]
 deps = []
