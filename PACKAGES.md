@@ -25,7 +25,6 @@ typst typst-lsp min-browser-bin typstyle tinymist
 git github-cli
 lsd
 yazi ffmpegthumbnailer unarchiver jq poppler fd ripgrep fzf zoxide p7zip
-neofetch
 unzip
 openssh
 mpv

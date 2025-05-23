@@ -1,4 +1,3 @@
-
 # Auto Hyprland
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
   HOSTNAME=$(uname -n)

@@ -84,6 +84,7 @@ export EDITOR=nvim
 export BROWSER=firefox
 alias pdf='evince'
 export HOSTNAME=$(uname -n)
+export TERM=xterm-256color
 
 # alias
 alias v='nvim'
@@ -100,6 +101,12 @@ alias gn='home crib off && ddcutil setvcp d6 4 && shutdown now'
 en() {
     sudo tailscale set --exit-node="$1"
 }
+
+alias nc='nmcli dev wifi con'
+alias nu='nmcli con up'
+alias nd='nmcli con down'
+alias nl='nmcli dev wifi list'
+alias nr='nmcli dev wifi list --rescan yes'
 
 alias s='cd ~/Sync/'
 alias sch='cd ~/Sync/School'
@@ -131,7 +138,7 @@ alias fa='talosctl -n 192.168.5.101,192.168.5.102,192.168.5.103 -e 192.168.5.101
 alias kc='kubectl'
 alias kcg='kubectl get'
 alias kcl='kubectl logs'
-alias kcd='kubectl delete'
+# alias kcd='kubectl delete'
 
 # yazi
 function y() {

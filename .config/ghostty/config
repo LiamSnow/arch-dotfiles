@@ -1,0 +1,26 @@
+font-family = JetBrainsMono NF
+font-size = 16.0
+
+cursor-style = block
+cursor-style-blink = false
+cursor-invert-fg-bg = true
+shell-integration-features = no-cursor
+
+window-padding-x = 15,0
+window-padding-y = 15,0
+window-decoration = false
+
+theme = GitHub-Dark-High-Contrast
+background = #111111
+# theme = dark:GitHub-Dark-High-Contrast,light:Novel
+# Seti
+
+keybind = ctrl+alt+enter=new_window
+keybind = ctrl+minus=unbind
+keybind = ctrl+shift+minus=decrease_font_size:1
+keybind = ctrl+equal=increase_font_size:1
+keybind = ctrl+shift+plus=increase_font_size:1
+keybind = performable:ctrl+c=copy_to_clipboard
+# keybind = performable:ctrl+v=paste_from_clipboard
+
+auto-update = download

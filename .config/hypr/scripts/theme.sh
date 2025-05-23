@@ -1,22 +1,11 @@
 #!/bin/bash
 
-reset_bar() {
-    killall hybrid-bar
-    hyprctl dispatch exec hybrid-bar
-}
-
 light() {
     gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
-    # cp ~/.config/hypr/themes/light.conf ~/.cache/hyprtheme.conf
-    # ln -sf ~/.config/HybridBar/themes/light.css ~/.cache/hybridtheme.css
-    # reset_bar
 }
 
 dark() {
     gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-    # cp ~/.config/hypr/themes/dark.conf ~/.cache/hyprtheme.conf
-    # ln -sf ~/.config/HybridBar/themes/dark.css ~/.cache/hybridtheme.css
-    # reset_bar
 }
 
 toggle() {

@@ -17,8 +17,9 @@ default_calendar = General
 highlight_event_days = True
 
 [highlight_days]
-multiple_on_overflow = True
+method = fg
 multiple = "#b2ec5d"
 
 [view]
 frame = top
+theme = dark

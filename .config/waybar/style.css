@@ -1,0 +1,59 @@
+* {
+  font-family: "UbuntuMono Nerd Font";
+  font-weight: bold;
+  min-height: 0;
+  font-size: 100%;
+}
+
+window#waybar {
+  background: transparent;
+}
+
+#waybar.empty,
+#waybar.tiled,
+#waybar.floating {
+  background: transparent;
+}
+
+.modules-right,
+.modules-left,
+.modules-center {
+  background: rgb(0, 0, 0);
+  border: 1.5px solid rgba(100, 100, 100, 0.6);
+  border-radius: 12px;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.4),
+    0 1px 3px rgba(0, 0, 0, 0.4);
+  padding: 3px 10px 5px 10px;
+  color: #eaeaea;
+}
+
+.modules-left {
+  margin: 2px 15px 15px 2px;
+}
+
+.modules-right {
+  margin: 2px 2px 15px 15px;
+}
+
+.modules-center {
+  margin: 2px 15px 15px 15px;
+}
+
+#workspaces button {
+  color: #eaeaea;
+  padding: 2px;
+  border: none;
+}
+
+#workspaces button.active {
+  color: #33ffcc;
+}
+
+#workspaces button.urgent {
+  background-color: #ff0000;
+}
+
+#temperature.critical {
+  background-color: #ff0000;
+}
