@@ -102,11 +102,11 @@ en() {
     sudo tailscale set --exit-node="$1"
 }
 
-alias nc='nmcli dev wifi con'
-alias nu='nmcli con up'
-alias nd='nmcli con down'
-alias nl='nmcli dev wifi list'
-alias nr='nmcli dev wifi list --rescan yes'
+# alias nc='nmcli dev wifi con'
+# alias nu='nmcli con up'
+# alias nd='nmcli con down'
+# alias nl='nmcli dev wifi list'
+# alias nr='nmcli dev wifi list --rescan yes'
 
 alias s='cd ~/Sync/'
 alias sch='cd ~/Sync/School'

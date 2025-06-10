@@ -1,7 +1,10 @@
 source "~/.config/nushell/keybindings.nu"
+source ~/.config/nushell/zoxide.nu
 
 alias v = nvim
+alias h = helix
 alias vh = nvim .
+alias hh = helix .
 alias vs = sudoedit
 alias sc = sudo systemctl
 alias cb = cd ..
@@ -49,7 +52,7 @@ def gn [] {
 }
 
 def en [node: string] {
-    sudo tailscale set --exit-node=$node
+    sudo tailscale set $"--exit-node=($node)"
 }
 
 def --env y [...args] {
@@ -62,18 +65,3 @@ def --env y [...args] {
 	rm -fp $tmp
 }
 
-source ~/.config/nushell/zoxide.nu
-
-let zoxide_completer = {|spans|
-    $spans | skip 1 | zoxide query -l ...$in | lines | where {|x| $x != $env.PWD}
-}
-
-$env.config.completions.external = {
-    enable: true
-    completer: {|spans|
-        match $spans.0 {
-            z => $zoxide_completer
-            _ => { null }
-        } | do $in $spans
-    }
-}

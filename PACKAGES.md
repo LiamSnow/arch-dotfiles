@@ -17,8 +17,7 @@ gammastep
 xdg-desktop-portal-hyprland-git xdg-desktop-portal-gtk xdg-desktop-portal-wlr
 
 ## Terminal
-zsh
-zinit-git
+nushell
 kitty
 neovim tree-sitter-cli libwpe webkit2gtk wpebackend-fdo yq
 typst typst-lsp min-browser-bin typstyle tinymist
