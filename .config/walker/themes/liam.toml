@@ -24,7 +24,7 @@ h_expand = true
 h_align = "center"
 h_expand = true
 pixel_size = 24
-theme = ""
+theme = "WhiteSur-dark"
 
 [ui.window.box.margins]
 top = 500
@@ -71,23 +71,21 @@ y_align = 0.5
 
 [ui.window.box.scroll.list.item.icon]
 pixel_size = 26
-theme = ""
+theme = "WhiteSur-dark"
 
 [ui.window.box.scroll.list.margins]
 top = 8
 
 [ui.window.box.search.prompt]
 name = "prompt"
-icon = "edit-find"
-theme = ""
+theme = "WhiteSur-dark"
 pixel_size = 18
 h_align = "center"
 v_align = "center"
 
 [ui.window.box.search.clear]
 name = "clear"
-icon = "edit-clear"
-theme = ""
+theme = "WhiteSur-dark"
 pixel_size = 18
 h_align = "center"
 v_align = "center"
@@ -95,7 +93,7 @@ v_align = "center"
 [ui.window.box.search.input]
 h_align = "fill"
 h_expand = true
-icons = true
+icons = false
 
 [ui.window.box.search.spinner]
 hide = true

@@ -27,3 +27,4 @@ $env.PROMPT_COMMAND_RIGHT = {||
 
     ([$last_exit_code, (char space), $host_seg] | str join)
 }
+

@@ -62,7 +62,8 @@ type = { fg = "#2ac3de" }
 "type.builtin" = { fg = "#27a1b9" }
 "type.enum" = { fg = "#2ac3de" }
 "type.enum.variant" = { fg = "#ff9e64" }
-"ui.background" = { bg = "bg" }
+#"ui.background" = { bg = "bg" }
+"ui.background" = {}
 "ui.cursor" = { bg = "#c0caf5", fg = "#1a1b26" }
 "ui.cursor.match" = { fg = "#ff9e64", modifiers = ["bold"] }
 "ui.linenr" = { fg = "#3b4261" }
@@ -75,7 +76,8 @@ type = { fg = "#2ac3de" }
 "ui.statusline" = { bg = "#16161e", fg = "#a9b1d6" }
 "ui.statusline.inactive" = { bg = "#16161e", fg = "#3b4261" }
 "ui.statusline.normal" = { bg = "blue", fg = "black" }
-"ui.text" = { bg = "bg", fg = "#c0caf5" }
+#"ui.text" = { bg = "bg", fg = "#c0caf5" }
+"ui.text" = { fg = "#c0caf5" }
 "ui.text.focus" = { bg = "#283457" }
 "ui.text.inactive" = { fg = "#565f89", modifiers = ["italic"] }
 "ui.text.info" = { bg = "#16161e", fg = "#c0caf5" }

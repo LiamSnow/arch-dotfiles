@@ -23,4 +23,14 @@ $env.config = ($env.config | upsert keybindings [
       ]
     }
   }
+  {
+    name: cd_back
+    modifier: control
+    keycode: char_d
+    mode: [emacs, vi_normal, vi_insert]
+    event: {
+      send: executehostcommand,
+      cmd: "cd .."
+    }
+  }
 ])

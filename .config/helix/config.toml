@@ -9,5 +9,23 @@ insert = "bar"
 normal = "block"
 select = "underline"
 
+[keys.normal.space]
+e = [
+  ':sh rm -f /tmp/unique-file',
+  ':insert-output yazi "%{buffer_name}" --chooser-file=/tmp/unique-file',
+  ':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+  ':open %sh{cat /tmp/unique-file}',
+  ':redraw',
+  ':set mouse false',
+  ':set mouse true',
+]
 
-
+E = [
+  ':sh rm -f /tmp/unique-file',
+  ':insert-output yazi --chooser-file=/tmp/unique-file',
+  ':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+  ':open %sh{cat /tmp/unique-file}',
+  ':redraw',
+  ':set mouse false',
+  ':set mouse true',
+]

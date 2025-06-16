@@ -11,24 +11,24 @@ disable_click_to_close = false
 force_keyboard_focus = false
 
 [keys]
-# accept_typeahead = ["tab"]
-trigger_labels = "lalt"
+accept_typeahead = ["alt f"]
+trigger_labels = "lshift"
 next = ["tab"]
 prev = ["shift tab", "alt tab"]
 close = ["esc"]
 remove_from_history = ["shift backspace"]
-resume_query = ["ctrl r"]
-toggle_exact_search = ["ctrl m"]
+# resume_query = ["ctrl r"]
+# toggle_exact_search = ["ctrl m"]
 
 [keys.activation_modifiers]
-keep_open = "shift"
+keep_open = "ctrl"
 alternate = "alt"
 
-[keys.ai]
-clear_session = ["ctrl x"]
-copy_last_response = ["ctrl c"]
-resume_session = ["ctrl r"]
-run_last_response = ["ctrl e"]
+# [keys.ai]
+# clear_session = ["ctrl x"]
+# copy_last_response = ["ctrl c"]
+# resume_session = ["ctrl r"]
+# run_last_response = ["ctrl e"]
 
 [events]
 on_activate = ""
@@ -53,7 +53,7 @@ delay = 0
 resume_last_query = false
 
 [activation_mode]
-labels = "jkl;asdf"
+labels = "hjklyuio"
 
 [builtins.applications]
 weight = 5
@@ -210,7 +210,7 @@ prefix = "/"
 [builtins.websearch]
 keep_selection = true
 weight = 5
-icon = "applications-internet"
+icon = "system-search"
 name = "websearch"
 placeholder = "Websearch"
 
@@ -249,3 +249,101 @@ icon = "accessories-dictionary"
 placeholder = "Translation"
 switcher_only = true
 provider = "googlefree"
+
+[[plugins]]
+keep_sort = false
+name = "fast"
+placeholder = "Quick Open"
+recalculate_score = true
+show_icon_when_single = true
+switcher_only = true
+
+[[plugins.entries]]
+exec = "ghostty --working-directory=\"/home/liams\""
+label = "Home"
+# icon = "go-home-symbolic"
+
+[[plugins.entries]]
+exec = "ghostty --working-directory=\"/home/liams/Sync\""
+label = "Sync"
+# icon = "folder-mail-cloud"
+
+[[plugins.entries]]
+exec = "ghostty --working-directory=\"/home/liams/Sync/School\""
+label = "School"
+# icon = "notes-app-symbolic"
+
+[[plugins.entries]]
+exec = "ghostty --working-directory=\"/home/liams/Sync/Arch\""
+label = "Arch Sync"
+# icon = "folder-mail-cloud"
+
+[[plugins.entries]]
+exec = "ghostty --working-directory=\"/home/liams/Downloads\""
+label = "Downloads"
+# icon = "downloaded-symbolic"
+
+
+[[plugins.entries]]
+exec = "walker -m classwork"
+label = "Classwork"
+# icon = "notes-app-symbolic"
+
+[[plugins.entries]]
+exec = "walker -m code"
+label = "Code"
+# icon = "code-class"
+
+[[plugins.entries]]
+exec = "walker -m config"
+label = "Config"
+# icon = "settings"
+
+
+[[plugins.entries]]
+exec = "ghostty -e \"nvim -c \\\"PyGPTNew perplexity\\\"\""
+label = "Perplexity"
+# icon = "system-search"
+
+[[plugins.entries]]
+exec = "ghostty -e \"nvim -c \\\"PyGPTNew claude_think\\\"\""
+label = "GPT"
+# icon = "user-status-pending-symbolic"
+
+[[plugins.entries]]
+exec = "ghostty -e \"ssh root@192.168.1.43 -p 8822 -i ~/.ssh/monolith_boot\""
+label = "EightSleep"
+
+[[plugins.entries]]
+exec = "ghostty -e \"ssh liams@192.168.5.102\""
+label = "Flake2"
+
+
+
+
+[[plugins]]
+name = "sink"
+prefix = "s:"
+placeholder = "Select Sink"
+src_once = "pactl list short sinks | awk '{print $2}'"
+cmd = "pactl set-default-sink %RESULT%"
+
+
+[[plugins]]
+name = "code"
+placeholder = "Select Project"
+src_once = "find /home/liams/Sync/Code -mindepth 1 -maxdepth 1 -type d -printf \"%f\n\""
+cmd = "ghostty --working-directory=\"/home/liams/Sync/Code/%RESULT%\""
+
+
+[[plugins]]
+name = "classwork"
+placeholder = "Select Class"
+src_once = "find /home/liams/Sync/Classwork -mindepth 1 -maxdepth 1 -type d -printf \"%f\n\""
+cmd = "ghostty --working-directory=\"/home/liams/Sync/Classwork/%RESULT%\""
+
+[[plugins]]
+name = "config"
+placeholder = "Select App"
+src_once = "find /home/liams/.config -mindepth 1 -maxdepth 1 \\( -type d -o -type l \\) -printf \"%f\n\""
+cmd = "ghostty --working-directory=\"/home/liams/.config/%RESULT%\""

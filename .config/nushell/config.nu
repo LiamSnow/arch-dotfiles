@@ -1,22 +1,26 @@
 source "~/.config/nushell/keybindings.nu"
 source ~/.config/nushell/zoxide.nu
+use '/home/liams/.config/broot/launcher/nushell/br' *
 
 alias v = nvim
 alias h = helix
+# alias hx = helix
 alias vh = nvim .
 alias hh = helix .
 alias vs = sudoedit
+
 alias sc = sudo systemctl
-alias cb = cd ..
 alias gs = git status
 alias sto = stow --dir=/home/liams/Sync/Arch --target=/home/liams .
 alias bri = ddcutil setvcp 10
-alias pdf = evince
+alias pip = env/bin/pip
+
 alias nc = nmcli dev wifi con
 alias nu = nmcli con up
 alias nd = nmcli con down
 alias nl = nmcli dev wifi list
 alias nr = nmcli dev wifi list --rescan yes
+
 alias s = cd ~/Sync/
 alias sch = cd ~/Sync/School
 alias cw = cd ~/Sync/Classwork
@@ -25,21 +29,8 @@ alias pack = v ~/Sync/Arch/PACKAGES.md
 alias setup = v ~/Sync/Arch/SETUP.md
 alias c = cd ~/Sync/Code
 alias d = cd ~/Downloads
-alias h = cd ~
 alias nvc = cd ~/.config/nvim
 alias hyp = cd ~/.config/hypr
-alias gpd = v -c "PyGPTNew deepseek"
-alias gpp = v -c "PyGPTNew perplexity"
-alias gppd = v -c "PyGPTNew perplexity_deep"
-alias gpo = v -c "PyGPTNew chat"
-alias gpa = v -c "PyGPTNew claude_think"
-alias gpap = v -c "PyGPTNew claude_think_prompt"
-alias gpab = v -c "PyGPTNew claude_basic"
-alias t = todo
-alias shop = t --config ~/.config/todoman/shopping.py
-alias ts = t --config ~/.config/todoman/school.py
-alias cal = ikhal
-alias pip = env/bin/pip
 
 def hg [pattern] {
     history | where command =~ $pattern
@@ -51,7 +42,7 @@ def gn [] {
     shutdown now
 }
 
-def en [node: string] {
+def en [node = ""] {
     sudo tailscale set $"--exit-node=($node)"
 }
 
@@ -64,4 +55,3 @@ def --env y [...args] {
 	}
 	rm -fp $tmp
 }
-

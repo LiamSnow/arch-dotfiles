@@ -1,5 +1,5 @@
 @define-color foreground #c4c2d0;
-@define-color background #191919;
+@define-color background #191919cc;
 @define-color cursor #c4c2d0;
 
 /* $bemenu_args = -i --tf=##eecc11 --hf=##eecc11 -H 24 */
@@ -58,7 +58,6 @@ slider,
   border-radius: 16px;
   background: @background;
   padding: 12px;
-  border: 1px solid lighter(@background);
   box-shadow:
     0 19px 38px rgba(0, 0, 0, 0.3),
     0 15px 12px rgba(0, 0, 0, 0.22);
@@ -68,7 +67,7 @@ slider,
   box-shadow:
     0 1px 3px rgba(0, 0, 0, 0.1),
     0 1px 2px rgba(0, 0, 0, 0.22);
-  background: lighter(@background);
+  background: #00000040;
   border-radius: 8px;
   margin-bottom: 12px;
   padding: 12px;
@@ -123,7 +122,7 @@ child {
 child:selected,
 child:hover {
   border-radius: 8px;
-  background: #333333;
+  background: #00000040;
 }
 
 #item {
@@ -160,7 +159,7 @@ child:hover {
 .activation #text,
 .activation #icon,
 .activation #search {
-  opacity: 0.5;
+    opacity: 0.7;
 }
 
 .aiItem {
