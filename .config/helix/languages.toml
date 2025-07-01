@@ -6,3 +6,7 @@ command = "clippy"
 
 [language-server.rust-analyzer.config.cargo]
 features = "all"
+
+[language-server.qmlls]
+args = ["-E"]
+command = "qmlls"

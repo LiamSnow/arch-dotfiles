@@ -3,6 +3,7 @@ theme = "tokyonight"
 [editor]
 line-number = "relative"
 popup-border = "all"
+shell = ["nu", "-c"]
 
 [editor.cursor-shape]
 insert = "bar"
@@ -13,7 +14,7 @@ select = "underline"
 e = [
   ':sh rm -f /tmp/unique-file',
   ':insert-output yazi "%{buffer_name}" --chooser-file=/tmp/unique-file',
-  ':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+  #':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
   ':open %sh{cat /tmp/unique-file}',
   ':redraw',
   ':set mouse false',
@@ -23,7 +24,7 @@ e = [
 E = [
   ':sh rm -f /tmp/unique-file',
   ':insert-output yazi --chooser-file=/tmp/unique-file',
-  ':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+  #':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
   ':open %sh{cat /tmp/unique-file}',
   ':redraw',
   ':set mouse false',

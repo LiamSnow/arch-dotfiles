@@ -11,8 +11,8 @@ window-padding-y = 15,0
 window-decoration = false
 
 theme = GitHub-Dark-High-Contrast
-background = #111111
-background-opacity = 0.9
+background = #000000
+background-opacity = 0.7
 # theme = dark:GitHub-Dark-High-Contrast,light:Novel
 # Seti
 

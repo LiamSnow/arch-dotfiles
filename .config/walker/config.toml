@@ -300,14 +300,14 @@ label = "Config"
 # icon = "settings"
 
 
-[[plugins.entries]]
-exec = "ghostty -e \"nvim -c \\\"PyGPTNew perplexity\\\"\""
-label = "Perplexity"
-# icon = "system-search"
+# [[plugins.entries]]
+# exec = "ghostty -e \"nvim -c \\\"PyGPTNew perplexity\\\"\""
+# label = "Perplexity"
+# # icon = "system-search"
 
-[[plugins.entries]]
-exec = "ghostty -e \"nvim -c \\\"PyGPTNew claude_think\\\"\""
-label = "GPT"
+# [[plugins.entries]]
+# exec = "ghostty -e \"nvim -c \\\"PyGPTNew claude_think\\\"\""
+# label = "GPT"
 # icon = "user-status-pending-symbolic"
 
 [[plugins.entries]]

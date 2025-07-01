@@ -24,7 +24,7 @@
         "command": "~/.config/HybridBar/workspace.sh"
     },
     "right-label_clock": {
-        "command": "date '+%A %b %-d   %-I:%M %p'"
+        "command": "date '+%A %b %-d   %-H:%M'"
     },
     "right-spacing_out2": {
         "spacing_end": 13

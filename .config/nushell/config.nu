@@ -15,11 +15,11 @@ alias sto = stow --dir=/home/liams/Sync/Arch --target=/home/liams .
 alias bri = ddcutil setvcp 10
 alias pip = env/bin/pip
 
-alias nc = nmcli dev wifi con
-alias nu = nmcli con up
-alias nd = nmcli con down
-alias nl = nmcli dev wifi list
-alias nr = nmcli dev wifi list --rescan yes
+alias wc = nmcli dev wifi con
+alias wu = nmcli con up
+alias wd = nmcli con down
+alias wl = nmcli dev wifi list
+alias wr = nmcli dev wifi list --rescan yes
 
 alias s = cd ~/Sync/
 alias sch = cd ~/Sync/School

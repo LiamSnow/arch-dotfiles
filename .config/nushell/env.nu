@@ -1,8 +1,8 @@
 $env.config.show_banner = false
-$env.config.edit_mode = "vi"
+#$env.config.edit_mode = "vi"
 
-$env.EDITOR = "nvim"
-$env.config.buffer_editor = "nvim"
+$env.EDITOR = "hx"
+$env.config.buffer_editor = "hx"
 
 $env.BROWSER = "zen"
 $env.HOSTNAME = (uname | get nodename)
@@ -28,3 +28,4 @@ $env.PROMPT_COMMAND_RIGHT = {||
     ([$last_exit_code, (char space), $host_seg] | str join)
 }
 
+source ~/.config/nushell/secrets.nu
