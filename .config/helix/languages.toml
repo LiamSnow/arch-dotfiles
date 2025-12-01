@@ -1,12 +1,46 @@
-
-
-
 [language-server.rust-analyzer.config.check]
 command = "clippy"
 
 [language-server.rust-analyzer.config.cargo]
 features = "all"
 
-[language-server.qmlls]
-args = ["-E"]
-command = "qmlls"
+# [language-server.qmlls]
+# args = ["-E"]
+# command = "qml-lsp"
+
+# [language-server.harper-ls]
+# command = "harper-ls"
+# args = ["--stdio"]
+
+[[language]]
+name = "python"
+scope = "source.python"
+injection-regex = "py(thon)?"
+file-types = ["py", "pyi", "py3", "pyw", "ptl", "rpy", "cpy", "ipy", "pyt", { glob = ".python_history" }, { glob = ".pythonstartup" }, { glob = ".pythonrc" }, { glob = "*SConstruct" }, { glob = "*SConscript" }, { glob = "*sconstruct" }]
+shebangs = ["python", "uv"]
+roots = ["pyproject.toml", "setup.py", "poetry.lock", "pyrightconfig.json"]
+comment-token = "#"
+language-servers = ["ty", "basedpyright"]
+# TODO: pyls needs utf-8 offsets
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "markdown"
+scope = "source.md"
+injection-regex = "md|markdown"
+file-types = ["md", "livemd", "markdown", "mdx", "mkd", "mkdn", "mdwn", "mdown", "markdn", "mdtxt", "mdtext", "workbook", { glob = "PULLREQ_EDITMSG" }]
+roots = [".marksman.toml"]
+language-servers = ["marksman", "markdown-oxide", "harper-ls", "ltex-ls-plus"]
+indent = { tab-width = 2, unit = "  " }
+block-comment-tokens = { start = "<!--", end = "-->" }
+# word-completion.trigger-length = 4
+
+[[language]]
+name = "typst"
+scope = "source.typst"
+injection-regex = "typ(st)?"
+file-types = ["typst", "typ"]
+comment-token = "//"
+block-comment-tokens = { start = "/*", end = "*/" }
+language-servers = ["tinymist", "harper-ls"]
+indent = { tab-width = 2, unit = "  " }

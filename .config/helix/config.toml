@@ -4,6 +4,9 @@ theme = "tokyonight"
 line-number = "relative"
 popup-border = "all"
 shell = ["nu", "-c"]
+true-color = true
+middle-click-paste = true
+# clipboard-provider = "termcode"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -11,7 +14,10 @@ normal = "block"
 select = "underline"
 
 [keys.normal.space]
-e = [
+e = "file_explorer_in_current_buffer_directory"
+E = "file_explorer"
+
+f = [
   ':sh rm -f /tmp/unique-file',
   ':insert-output yazi "%{buffer_name}" --chooser-file=/tmp/unique-file',
   #':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
@@ -21,7 +27,7 @@ e = [
   ':set mouse true',
 ]
 
-E = [
+F = [
   ':sh rm -f /tmp/unique-file',
   ':insert-output yazi --chooser-file=/tmp/unique-file',
   #':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
