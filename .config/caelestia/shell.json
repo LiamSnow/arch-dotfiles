@@ -2,13 +2,13 @@
     "bar": {
         "workspaces": {
             "activeIndicator": true,
-            "activeLabel": "󰮯 ",
+            "activeLabel": "A",
             "activeTrail": true,
             "label": "  ",
             "occupiedBg": false,
-            "occupiedLabel": "󰮯 ",
+            "occupiedLabel": "O",
             "rounded": true,
-            "showWindows": true,
+            "showWindows": false,
             "shown": 5
         }
     },
@@ -18,8 +18,13 @@
     },
     "dashboard": {
         "mediaUpdateInterval": 500,
-        "visualiserBars": 45,
-        "weatherLocation": "42,71"
+        "visualiserBars": 45
+    },
+    "weather": {
+        "lat": "42.273960",
+        "lon": "-71.809677",
+        "fahrenheit": true,
+        "userAgent": "Desktop (mail@liamsnow.com)"
     },
     "launcher": {
         "actionPrefix": ">",

@@ -21,3 +21,6 @@
 	clean = git-lfs clean -- %f
 [color]
 	ui = auto
+[credential "https://gitlab03.wpi.edu"]
+	helper = 
+	helper = !/usr/bin/glab auth git-credential
