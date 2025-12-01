@@ -1,6 +1,9 @@
 $env.config.show_banner = false
 #$env.config.edit_mode = "vi"
 
+$env.LANG = "en_US.UTF-8"
+$env.LC_ALL = "en_US.UTF-8"
+
 $env.EDITOR = "hx"
 $env.config.buffer_editor = "hx"
 
@@ -11,6 +14,8 @@ $env.TERM = "xterm-256color"
 
 use std/util "path add"
 path add "~/.cargo/bin"
+path add "/opt/cuda/bin"
+path add "~/.local/bin"
 
 $env.PROMPT_COMMAND_RIGHT = {||
     let host_seg = ([

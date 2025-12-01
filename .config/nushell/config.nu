@@ -1,12 +1,6 @@
 source "~/.config/nushell/keybindings.nu"
 source ~/.config/nushell/zoxide.nu
-use '/home/liams/.config/broot/launcher/nushell/br' *
 
-alias v = nvim
-alias h = helix
-# alias hx = helix
-alias vh = nvim .
-alias hh = helix .
 alias vs = sudoedit
 
 alias sc = sudo systemctl
@@ -39,13 +33,13 @@ def hg [pattern] {
 def gn [] {
     home crib off
     ddcutil setvcp d6 4
-    shutdown now
 }
 
 def en [node = ""] {
     sudo tailscale set $"--exit-node=($node)"
 }
 
+# yazi
 def --env y [...args] {
 	let tmp = (mktemp -t "yazi-cwd.XXXXXX")
 	yazi ...$args --cwd-file $tmp
