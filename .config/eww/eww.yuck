@@ -1,0 +1,155 @@
+(defpoll active_workspace :interval "500ms"
+  "niri msg workspaces | grep -o '^\\s*\\*\\s*[0-9]\\+' | grep -o '[0-9]\\+' || echo '1'")
+
+(defpoll time :interval "1s"
+  "date '+%H:%M'")
+
+(defpoll date :interval "60s"
+  "date '+%B %d, %Y'")
+
+(defpoll battery :interval "5s" 
+  "cat /sys/class/power_supply/BAT0/capacity 2>/dev/null || echo '0'")
+
+(defpoll battery_status :interval "5s" 
+  "cat /sys/class/power_supply/BAT0/status 2>/dev/null || echo ''")
+
+(defpoll volume :interval "100ms" 
+  "wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print int($2*100)}'")
+
+(defpoll volume_muted :interval "100ms" 
+  "wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED && echo true || echo false")
+
+(defvar topbar_reveal false)
+
+(defwidget workspaces []
+  (box :class "workspaces"
+       :orientation "v"
+       :space-evenly true
+    (button :onclick "niri msg action focus-workspace 1"
+      (box :class "workspace ${active_workspace == "1" ? "active" : ""}" :height 100))
+    (button :onclick "niri msg action focus-workspace 2"
+      (box :class "workspace ${active_workspace == "2" ? "active" : ""}" :height 100))
+    (button :onclick "niri msg action focus-workspace 3"
+      (box :class "workspace ${active_workspace == "3" ? "active" : ""}" :height 100))
+    (button :onclick "niri msg action focus-workspace 4"
+      (box :class "workspace ${active_workspace == "4" ? "active" : ""}" :height 100))
+    (button :onclick "niri msg action focus-workspace 5"
+      (box :class "workspace ${active_workspace == "5" ? "active" : ""}" :height 100))))
+
+(defwidget battery_bar []
+  (box :class "battery-bar"
+       :orientation "v"
+       :space-evenly false
+    (box :class "battery-empty"
+         :vexpand true)
+    (box :class "battery-filled"
+         :height "${battery * 10}")))
+
+(defwindow bar
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "1px"
+                      :height "95%"
+                      :anchor "left center")
+  :stacking "fg"
+  :exclusive false
+  :focusable false
+  (workspaces))
+
+(defwindow battery_bar_window
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "1px"
+                      :height "95%"
+                      :anchor "right center")
+  :stacking "fg"
+  :exclusive false
+  :focusable false
+  (battery_bar))
+
+(defwidget topbar_content []
+  (box :class "topbar-content"
+       :orientation "v"
+       :space-evenly false
+       :halign "center"
+       :spacing 15
+    (label :class "time" :text time)
+    (label :class "date" :text date)
+    (box :class "stats"
+         :orientation "h"
+         :space-evenly false
+         :spacing 25
+         :halign "center"
+      (label :class "battery" 
+             :text "${battery}%" 
+             :visible {battery != ""})
+      (label :class "volume" 
+             :text "${volume}%"))))
+
+(defwindow topbar
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "300px"
+                      :height "1px"
+                      :anchor "top center")
+  :stacking "overlay"
+  :exclusive false
+  :focusable false
+  (eventbox :onhover "eww update topbar_reveal=true"
+            :onhoverlost "eww update topbar_reveal=false"
+    (revealer :transition "slidedown"
+              :reveal topbar_reveal
+              :duration "150ms"
+      (topbar_content))))
+
+      
+(defwindow corner-tl
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "20px"
+                      :height "20px"
+                      :anchor "top left")
+  :stacking "overlay"
+  :exclusive false
+  :focusable false
+  (box :class "corner-tl"))
+
+(defwindow corner-tr
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "20px"
+                      :height "20px"
+                      :anchor "top right")
+  :stacking "overlay"
+  :exclusive false
+  :focusable false
+  (box :class "corner-tr"))
+
+(defwindow corner-bl
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "20px"
+                      :height "20px"
+                      :anchor "bottom left")
+  :stacking "overlay"
+  :exclusive false
+  :focusable false
+  (box :class "corner-bl"))
+
+(defwindow corner-br
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "20px"
+                      :height "20px"
+                      :anchor "bottom right")
+  :stacking "overlay"
+  :exclusive false
+  :focusable false
+  (box :class "corner-br"))

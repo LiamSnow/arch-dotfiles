@@ -1,0 +1,109 @@
+* {
+  all: unset;
+}
+
+.workspaces {
+  background-color: #ff0000;
+}
+
+button {
+  all: unset;
+  padding: 0;
+  margin: 0;
+}
+
+.workspace {
+  background-color: #333;
+  min-width: 1px;
+  min-height: 100px;
+}
+
+.workspace.active {
+  background-color: #f0fb29;
+}
+
+.battery-bar {
+  background-color: #ff0000;
+  min-width: 1px;
+}
+
+.battery-empty {
+  background-color: #333;
+  min-width: 1px;
+}
+
+.battery-filled {
+  background-color: #f0fb29;
+  min-width: 1px;
+}
+
+.hover-zone {
+  background-color: transparent;
+  min-width: 400px;
+}
+
+.topbar-content {
+  background: rgba(15, 15, 15, 0.85);
+  padding: 25px 40px 30px 40px;
+  border-radius: 0 0 20px 20px;
+  color: #ffffff;
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+  margin: 0 60px 60px 60px;
+  min-width: 200px;
+}
+
+.time {
+  font-size: 56px;
+  font-weight: 700;
+  color: #f0fb29;
+  letter-spacing: -2px;
+  text-shadow: 0 0 20px rgba(240, 251, 41, 0.3);
+}
+
+.date {
+  font-size: 18px;
+  font-weight: 400;
+  color: #888888;
+  letter-spacing: 1px;
+}
+
+.stats {
+  margin-top: 10px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.battery {
+  font-size: 16px;
+  font-weight: 600;
+  color: #88ff88;
+  background: rgba(136, 255, 136, 0.1);
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+
+.volume {
+  font-size: 16px;
+  font-weight: 600;
+  color: #88ccff;
+  background: rgba(136, 204, 255, 0.1);
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+
+.corner-tl {
+  background: radial-gradient(circle at bottom right, transparent 0, transparent 20px, black 20px);
+}
+
+.corner-tr {
+  background: radial-gradient(circle at bottom left, transparent 0, transparent 20px, black 20px);
+}
+
+.corner-bl {
+  background: radial-gradient(circle at top right, transparent 0, transparent 20px, black 20px);
+}
+
+.corner-br {
+  background: radial-gradient(circle at top left, transparent 0, transparent 20px, black 20px);
+}
