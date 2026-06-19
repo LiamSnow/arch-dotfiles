@@ -1,12 +1,16 @@
-theme = "tokyonight"
+theme = "liams"
 
 [editor]
 line-number = "relative"
 popup-border = "all"
-shell = ["nu", "-c"]
+shell = ["fish", "-c"]
 true-color = true
 middle-click-paste = true
+bufferline = "always"
 # clipboard-provider = "termcode"
+
+[editor.soft-wrap]
+enable = true
 
 [editor.cursor-shape]
 insert = "bar"

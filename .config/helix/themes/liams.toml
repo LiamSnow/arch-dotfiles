@@ -1,0 +1,6 @@
+# inherits = "sonokai"
+inherits = "github_dark"
+# inherits = "tokyonight_storm"
+
+"ui.background" = {  }
+

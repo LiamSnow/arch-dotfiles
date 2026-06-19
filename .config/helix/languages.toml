@@ -1,46 +1,127 @@
+ 
+# -- Rust Analyzer -- #
+[language-server.rust-analyzer.config]
 [language-server.rust-analyzer.config.check]
 command = "clippy"
 
 [language-server.rust-analyzer.config.cargo]
-features = "all"
+allFeatures = true
 
-# [language-server.qmlls]
-# args = ["-E"]
-# command = "qml-lsp"
+[language-server.rust-analyzer.config.procMacro]
+enabled = true
 
-# [language-server.harper-ls]
-# command = "harper-ls"
-# args = ["--stdio"]
+# [language-server.rust-analyzer.config.imports.granularity]
+# group = "item"
 
+# [language-server.rust-analyzer.config.imports.merge]
+# glob = false
+
+# [language-server.rust-analyzer.config.rustfmt]
+# extraArgs = ["+nightly"]
+
+# -- TinyMist -- #
+[language-server.tinymist]
+command = "tinymist"
+
+[language-server.tinymist.config]
+typstExtraArgs = ["--features", "html"]
+
+[language-server.harper-ls]
+command = "harper-ls"
+args = ["--stdio"]
+
+
+# -- Harper -- #
+[language-server.harper-ls.config.harper-ls]
+userDictPath = ""
+workspaceDictPath = ""
+fileDictPath = ""
+diagnosticSeverity = "hint"
+isolateEnglish = false
+dialect = "American"
+maxFileLength = 120000
+ignoredLintsPath = ""
+excludePatterns = []
+
+[language-server.harper-ls.config.harper-ls.linters]
+SpellCheck = true
+SpelledNumbers = false
+AnA = true
+SentenceCapitalization = true
+UnclosedQuotes = true
+WrongQuotes = false
+LongSentences = true
+RepeatedWords = true
+Spaces = true
+Matcher = true
+CorrectNumberSuffix = true
+
+[language-server.harper-ls.config.harper-ls.codeActions]
+ForceStable = false
+
+[language-server.harper-ls.config.harper-ls.markdown]
+IgnoreLinkTitle = false
+
+
+# -- Langauges -- #
 [[language]]
 name = "python"
 scope = "source.python"
-injection-regex = "py(thon)?"
-file-types = ["py", "pyi", "py3", "pyw", "ptl", "rpy", "cpy", "ipy", "pyt", { glob = ".python_history" }, { glob = ".pythonstartup" }, { glob = ".pythonrc" }, { glob = "*SConstruct" }, { glob = "*SConscript" }, { glob = "*sconstruct" }]
 shebangs = ["python", "uv"]
 roots = ["pyproject.toml", "setup.py", "poetry.lock", "pyrightconfig.json"]
-comment-token = "#"
 language-servers = ["ty", "basedpyright"]
-# TODO: pyls needs utf-8 offsets
-indent = { tab-width = 4, unit = "    " }
 
 [[language]]
 name = "markdown"
 scope = "source.md"
-injection-regex = "md|markdown"
-file-types = ["md", "livemd", "markdown", "mdx", "mkd", "mkdn", "mdwn", "mdown", "markdn", "mdtxt", "mdtext", "workbook", { glob = "PULLREQ_EDITMSG" }]
-roots = [".marksman.toml"]
-language-servers = ["marksman", "markdown-oxide", "harper-ls", "ltex-ls-plus"]
-indent = { tab-width = 2, unit = "  " }
-block-comment-tokens = { start = "<!--", end = "-->" }
-# word-completion.trigger-length = 4
+language-servers = ["marksman", "markdown-oxide", "harper-ls"]
 
 [[language]]
 name = "typst"
 scope = "source.typst"
-injection-regex = "typ(st)?"
-file-types = ["typst", "typ"]
-comment-token = "//"
-block-comment-tokens = { start = "/*", end = "*/" }
 language-servers = ["tinymist", "harper-ls"]
-indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "text"
+scope = "source.text"
+file-types = ["txt"]
+language-servers = ["harper-ls"]
+
+[[language]]
+name = "rust"
+scope = "source.rust"
+language-servers = ["rust-analyzer"]
+# language-servers = ["rust-analyzer", "harper-ls"]
+
+# [[language]]
+# name = "xml"
+# scope = "source.xml"
+# language-servers = [""]
+
+
+[[language]]
+name = "asciidoc"
+language-id = "asciidoc"
+scope = "source.adoc"
+injection-regex = "adoc"
+file-types = ["adoc"]
+comment-tokens = ["//"]
+block-comment-tokens = [{ start = "////", end = "////" }]
+grammar = "asciidoc"
+language-servers = ["harper-ls"]
+
+[[language]]
+name = "asciidoc_inline"
+language-id = "asciidoc_inline"
+scope = "source.asciidoc_inline"
+injection-regex = "asciidoc_inline"
+file-types = []
+grammar = "asciidoc_inline"
+
+[[grammar]]
+name = "asciidoc"
+source = { git = "https://github.com/cathaysia/tree-sitter-asciidoc.git", rev = "dd042737a453599bc851b7338d9222d3bd35df53", subpath = "tree-sitter-asciidoc" }
+
+[[grammar]]
+name = "asciidoc_inline"
+source = { git = "https://github.com/cathaysia/tree-sitter-asciidoc.git", rev = "dd042737a453599bc851b7338d9222d3bd35df53", subpath = "tree-sitter-asciidoc_inline" }
