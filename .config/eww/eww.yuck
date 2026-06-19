@@ -7,10 +7,10 @@
 (defpoll date :interval "60s"
   "date '+%B %d, %Y'")
 
-(defpoll battery :interval "5s" 
+(defpoll battery :interval "1s" 
   "cat /sys/class/power_supply/BAT0/capacity 2>/dev/null || echo '0'")
 
-(defpoll battery_status :interval "5s" 
+(defpoll battery_status :interval "1s" 
   "cat /sys/class/power_supply/BAT0/status 2>/dev/null || echo ''")
 
 (defpoll volume :interval "100ms" 
@@ -42,7 +42,7 @@
        :space-evenly false
     (box :class "battery-empty"
          :vexpand true)
-    (box :class "battery-filled"
+    (box :class "battery-filled ${battery_status == 'Charging' ? 'charging' : ''}"
          :height "${battery * 10}")))
 
 (defwindow bar
@@ -76,35 +76,36 @@
        :halign "center"
        :spacing 15
     (label :class "time" :text time)
-    (label :class "date" :text date)
-    (box :class "stats"
-         :orientation "h"
-         :space-evenly false
-         :spacing 25
-         :halign "center"
-      (label :class "battery" 
-             :text "${battery}%" 
-             :visible {battery != ""})
-      (label :class "volume" 
-             :text "${volume}%"))))
+    (label :class "date" :text date)))
+    ; (box :class "stats"
+    ;      :orientation "h"
+    ;      :space-evenly false
+    ;      :spacing 25
+    ;      :halign "center"
+    ;   (label :class "battery" 
+    ;          :text "${battery}%" 
+    ;          :visible {battery != ""})
+    ;   (label :class "volume" 
+    ;          :text "${volume}%"))))
 
 (defwindow topbar
+  :visible topbar_reveal
   :monitor 0
   :geometry (geometry :x "0%"
                       :y "0%"
-                      :width "300px"
+                      :width "200px"
                       :height "1px"
-                      :anchor "top center")
+                      :anchor "center center")
   :stacking "overlay"
   :exclusive false
   :focusable false
-  (eventbox :onhover "eww update topbar_reveal=true"
-            :onhoverlost "eww update topbar_reveal=false"
-    (revealer :transition "slidedown"
-              :reveal topbar_reveal
-              :duration "150ms"
-      (topbar_content))))
-
+  ; (revealer :transition "slidedown"
+  ;           :reveal topbar_reveal
+  ;           :duration "150ms"
+  (revealer :transition "none"
+            :reveal topbar_reveal
+            :duration "0ms"
+    (topbar_content)))
       
 (defwindow corner-tl
   :monitor 0
