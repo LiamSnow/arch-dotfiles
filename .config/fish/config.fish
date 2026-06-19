@@ -2,6 +2,8 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+alias e 'eza --icons'
+
 alias vs sudoedit
 alias sc 'sudo systemctl'
 alias gs 'git status'
@@ -9,11 +11,11 @@ alias sto 'stow --dir=/home/liams/Sync/Arch --target=/home/liams .'
 alias bri 'ddcutil setvcp 10'
 alias pip './env/bin/pip'
 
-alias wc 'nmcli dev wifi con'
-alias wu 'nmcli con up'
-alias wd 'nmcli con down'
-alias wl 'nmcli dev wifi list'
-alias wr 'nmcli dev wifi list --rescan yes'
+# alias wc 'nmcli dev wifi con'
+# alias wu 'nmcli con up'
+# alias wd 'nmcli con down'
+# alias wl 'nmcli dev wifi list'
+# alias wr 'nmcli dev wifi list --rescan yes'
 
 alias s 'cd ~/Sync/'
 alias sch 'cd ~/Sync/School'
@@ -36,5 +38,7 @@ set -gx TERM xterm-256color
 fish_add_path ~/.cargo/bin
 fish_add_path /opt/cuda/bin
 fish_add_path ~/.local/bin
+# set -gx GEM_HOME (ruby -e 'puts Gem.user_dir')
+fish_add_path $GEM_HOME/bin
 
 zoxide init fish | source
