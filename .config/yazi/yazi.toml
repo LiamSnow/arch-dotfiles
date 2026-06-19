@@ -1,8 +1,15 @@
-# yazi.toml
 [mgr]
 show_hidden = true
 
 [opener]
 open = [
 	{ run = 'xdg-open "$@"', desc = "Open", orphan = true },
+]
+jless = [
+	{ run = 'jless "$@"', block = true, desc = "jless" },
+]
+
+[open]
+prepend_rules = [
+	{ url = "*.json", use = "jless" },
 ]

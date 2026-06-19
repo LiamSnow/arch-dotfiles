@@ -1,4 +1,2 @@
 [flavor]
-# use = "tokyo-night"
-dark = "timu-macos-dark"
-light = "timu-macos-light"
+dark = "dracula"

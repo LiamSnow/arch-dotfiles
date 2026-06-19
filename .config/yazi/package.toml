@@ -1,12 +1,14 @@
 [[plugin.deps]]
 use = "dedukun/relative-motions"
-rev = "0d9c8cf"
-hash = "561ad872c77b95360c2657c5e8d395ed"
+rev = "a603d9e"
+hash = "e02a788e5b8ae0fb47fd0193dda589cc"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
-rev = "02d18be"
-hash = "882ed23839778f82dc137248979c8681"
+rev = "c2c16c8"
+hash = "7b625412411be411153886894d9acaf"
 
-[flavor]
-deps = []
+[[flavor.deps]]
+use = "yazi-rs/flavors:dracula"
+rev = "36c49ac"
+hash = "20624fcdfcf7e4e912de05e348065e5e"
