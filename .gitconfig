@@ -24,3 +24,9 @@
 [credential "https://gitlab03.wpi.edu"]
 	helper = 
 	helper = !/usr/bin/glab auth git-credential
+[alias]
+    # Difftastic aliases, so `git dlog` is `git log` with difftastic and so on.
+    logt = -c diff.external=difft log --ext-diff
+    showt = -c diff.external=difft show --ext-diff
+    difft = -c diff.external=difft diff
+
