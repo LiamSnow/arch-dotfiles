@@ -1,0 +1,49 @@
+
+// Workspaces
+// (this was kept from my split ergo keyboard, even though I don't use it lol)
+workspace "A"
+workspace "B"
+workspace "C"
+workspace "D"
+workspace "E"
+
+// Every window
+window-rule {
+    draw-border-with-background false
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
+
+// Firefox Picture-in-Picture
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+// Steam Notification
+window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+}
+
+// Minecraft
+window-rule {
+    match app-id="Minecraft*"
+    open-fullscreen true
+}
+
+// Screenshots
+screenshot-path "~/Sync/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+// Help menu
+hotkey-overlay {
+    skip-at-startup
+}
+
+animations {
+    // off
+}
+
+debug {
+    honor-xdg-activation-with-invalid-serial
+}

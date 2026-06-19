@@ -1,0 +1,19 @@
+input {
+    keyboard {
+        xkb {
+            options "caps:ctrl_modifier"
+        }
+        numlock
+    }
+
+    touchpad {
+        tap
+        dwt
+    }
+
+    mouse {
+        scroll-method "no-scroll"
+    }
+
+    focus-follows-mouse max-scroll-amount="0%"
+}
