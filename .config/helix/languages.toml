@@ -99,29 +99,3 @@ language-servers = ["rust-analyzer"]
 # language-servers = [""]
 
 
-[[language]]
-name = "asciidoc"
-language-id = "asciidoc"
-scope = "source.adoc"
-injection-regex = "adoc"
-file-types = ["adoc"]
-comment-tokens = ["//"]
-block-comment-tokens = [{ start = "////", end = "////" }]
-grammar = "asciidoc"
-language-servers = ["harper-ls"]
-
-[[language]]
-name = "asciidoc_inline"
-language-id = "asciidoc_inline"
-scope = "source.asciidoc_inline"
-injection-regex = "asciidoc_inline"
-file-types = []
-grammar = "asciidoc_inline"
-
-[[grammar]]
-name = "asciidoc"
-source = { git = "https://github.com/cathaysia/tree-sitter-asciidoc.git", rev = "dd042737a453599bc851b7338d9222d3bd35df53", subpath = "tree-sitter-asciidoc" }
-
-[[grammar]]
-name = "asciidoc_inline"
-source = { git = "https://github.com/cathaysia/tree-sitter-asciidoc.git", rev = "dd042737a453599bc851b7338d9222d3bd35df53", subpath = "tree-sitter-asciidoc_inline" }
