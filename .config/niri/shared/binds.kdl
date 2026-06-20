@@ -9,17 +9,9 @@ binds {
     Mod+I hotkey-overlay-title="1Password" { spawn-sh "1password --enable-features=UseOzonePlatform --ozone-platform=wayland"; }
 
     // Cosmic
-    Mod+Grave hotkey-overlay-title="Launcher" repeat=false { spawn "cosmic-launcher"; }
+    Mod+1 hotkey-overlay-title="Launcher" repeat=false { spawn "cosmic-launcher"; }
+    Mod+2 hotkey-overlay-title="Applications" repeat=false { spawn "cosmic-app-library"; }
     
-    // Vicinae
-    // Mod+Grave hotkey-overlay-title="Launcher" repeat=false { spawn "vicinae" "toggle"; }
-    // Mod+1 hotkey-overlay-title="Audio Output Picker" repeat=false { spawn "vicinae" "vicinae://launch/@rastsislaux/store.vicinae.pulseaudio/pulseaudio"; }
-    // Mod+2 hotkey-overlay-title="Emoji Picker" repeat=false { spawn "vicinae" "vicinae://launch/core/search-emojis"; }
-    // Mod+3 hotkey-overlay-title="Wallpaper Picker" repeat=false { spawn "vicinae" "vicinae://launch/@sovereign/store.vicinae.awww-switcher/wpgrid"; }
-    // Mod+Home hotkey-overlay-title="switch wallpaper" { spawn-sh "~/.config/niri/scripts/wallpaper.sh"; }
-    // Mod+4 hotkey-overlay-title="Bluetooth Picker" repeat=false { spawn "vicinae" "vicinae://launch/@Gelei/store.vicinae.bluetooth/devices"; }
-    // Mod+5 hotkey-overlay-title="WiFi Picker" repeat=false { spawn "vicinae" "vicinae://launch/@dagimg-dot/store.vicinae.wifi-commander/manage-saved-networks"; }
-
     // Lock
     Mod+Alt+L hotkey-overlay-title="Lock" { spawn "swaylock"; }
     Mod+X hotkey-overlay-title="Lock" { spawn "swaylock"; }
@@ -29,25 +21,25 @@ binds {
     Mod+Shift+BackSpace hotkey-overlay-title="Zen Private" { spawn "zen-browser" "--enable-features=UseOzonePlatform" "--ozone-platform=wayland" "--private-window"; }
 
     // Volume
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "raise"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume" "lower"; }
-    XF86AudioMute        allow-when-locked=true { spawn "swayosd-client" "--output-volume" "mute-toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn "swayosd-client" "--input-volume" "mute-toggle"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "-l" "1.0" "@DEFAULT_AUDIO_SINK@" "5%+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
+    XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
 
     // Temperature
     Alt+XF86AudioRaiseVolume allow-when-locked=true { spawn "~/.config/niri/scripts/temp.sh" "-200"; }
     Alt+XF86AudioLowerVolume allow-when-locked=true { spawn "~/.config/niri/scripts/temp.sh" "+200"; }
 
     // Media
-    XF86AudioPlay allow-when-locked=true { spawn "swayosd-client" "--playerctl=play-pause" "--player=spotify"; }
-    XF86AudioNext allow-when-locked=true { spawn "swayosd-client" "--playerctl=next" "--player=spotify"; }
-    XF86AudioPrev allow-when-locked=true { spawn "swayosd-client" "--playerctl=previous" "--player=spotify"; }
+    XF86AudioPlay allow-when-locked=true { spawn "playerctl" "--player=spotify" "play-pause"; }
+    XF86AudioNext allow-when-locked=true { spawn "playerctl" "--player=spotify" "next"; }
+    XF86AudioPrev allow-when-locked=true { spawn "playerctl" "--player=spotify" "previous"; }
 
     // Brightness
-    XF86MonBrightnessUp allow-when-locked=true { spawn "swayosd-client" "--brightness" "raise"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "swayosd-client" "--brightness" "lower"; }
-    Alt+XF86MonBrightnessUp allow-when-locked=true { spawn "swayosd-client" "--brightness" "+1"; }
-    Alt+XF86MonBrightnessDown allow-when-locked=true { spawn "swayosd-client" "--brightness" "-1"; }
+    XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "set" "5%+"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "set" "5%-"; }
+    Alt+XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "set" "1%+"; }
+    Alt+XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "set" "1%-"; }
 
     // Eww Topbar (Date Time)
     Mod+Semicolon { spawn-sh "eww update topbar_reveal=$([ $(eww get topbar_reveal) = true ] && echo false || echo true)"; }
